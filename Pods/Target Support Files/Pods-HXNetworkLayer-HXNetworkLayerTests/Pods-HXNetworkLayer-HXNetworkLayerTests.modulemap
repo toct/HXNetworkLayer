@@ -1,0 +1,6 @@
+framework module Pods_HXNetworkLayer_HXNetworkLayerTests {
+  umbrella header "Pods-HXNetworkLayer-HXNetworkLayerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
