@@ -32,8 +32,16 @@ class Contact: NSObject{
             var hx_contacts: [LocalContactInModel] = []
             
             if isAuthorized {
-                if let hx_cotactArr = AddressContact.hx_getContacts() as? [LocalContactInModel] {
-                    hx_contacts.append(contentsOf: hx_cotactArr)
+                if let objcArr = AddressContact.hx_getContacts() as? [LocalContactObjC] {
+                    let converted: [LocalContactInModel] = objcArr.map { obj in
+                        let m = LocalContactInModel()
+                        m.hx_firstName = obj.hx_firstName
+                        m.hx_lastName = obj.hx_lastName
+                        m.hx_phoneArray = obj.hx_phoneArray as? [String]
+                        m.hx_alterTime = obj.hx_alterTime
+                        return m
+                    }
+                    hx_contacts.append(contentsOf: converted)
                 }
             }else{
                 let hx_cotactArr = self.hx_getContacts()

@@ -1,7 +1,6 @@
 #import "AddressContact.h"
+#import "LocalContactObjC.h"
 #import <AddressBook/AddressBook.h>
-//#import <HXNetworkLayer/HXNetworkLayer-Swift.h>
-#import "HXNetworkLayer-Swift.h"
 
 @implementation AddressContact
 
@@ -39,7 +38,7 @@
 
         NSDate *hx_alterTime=(__bridge NSDate*)(ABRecordCopyValue(people, kABPersonModificationDateProperty));
 
-        LocalContactInModel *hx_model = [[LocalContactInModel alloc] init];
+        LocalContactObjC *hx_model = [[LocalContactObjC alloc] init];
         hx_model.hx_firstName = hx_firstName;
         hx_model.hx_lastName = hx_lastName;
         hx_model.hx_phoneArray = hx_phoneArray;
