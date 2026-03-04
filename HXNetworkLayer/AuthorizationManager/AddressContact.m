@@ -1,6 +1,7 @@
 #import "AddressContact.h"
 #import <AddressBook/AddressBook.h>
-#import "HXNetworkLayer/HXNetworkLayer-Swift.h"
+//#import <HXNetworkLayer/HXNetworkLayer-Swift.h>
+#import "HXNetworkLayer-Swift.h"
 
 @implementation AddressContact
 

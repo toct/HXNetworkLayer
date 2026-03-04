@@ -114,6 +114,7 @@
 		4C74D9C32F56D8E800D770C4 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C22F56D8E800D770C4 /* Debouncer.swift */; };
 		4C74D9C52F56DA2E00D770C4 /* UIImage_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */; };
 		4C74D9C72F56DBB400D770C4 /* ViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */; };
+		4C9952C32F582B27009C6DAD /* HXNetworkLayer-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9952C22F582B27009C6DAD /* HXNetworkLayer-Swift.h */; };
 		95FFDB9B7044B9BBE397B1B3 /* Pods_HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */; };
 		F6905D776132579E95EC32CD /* Pods_HXNetworkLayer_HXNetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2728A174833FBB06F775A3F /* Pods_HXNetworkLayer_HXNetworkLayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -237,6 +238,7 @@
 		4C74D9C22F56D8E800D770C4 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extension.swift; sourceTree = "<group>"; };
 		4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetting.swift; sourceTree = "<group>"; };
+		4C9952C22F582B27009C6DAD /* HXNetworkLayer-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HXNetworkLayer-Swift.h"; sourceTree = "<group>"; };
 		55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F39F53B0C3E03A655B3B56 /* Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig"; path = "Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB20D916A6BB9906D38D758B /* Pods-HXNetworkLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetworkLayer.release.xcconfig"; path = "Target Support Files/Pods-HXNetworkLayer/Pods-HXNetworkLayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				4C74D8EE2F567E1C00D770C4 /* AddressContact.h */,
+				4C9952C22F582B27009C6DAD /* HXNetworkLayer-Swift.h */,
 				4C74D8EF2F567E1C00D770C4 /* AddressContact.m */,
 				4C74D8F12F567E1C00D770C4 /* Camera.swift */,
 				4C74D8F22F567E1C00D770C4 /* ConstactUpload.swift */,
@@ -487,6 +490,7 @@
 			files = (
 				4C74D9B52F567E6A00D770C4 /* HXNetworkLayer-Bridge-header.h in Headers */,
 				4C74D94E2F567E1C00D770C4 /* AddressContact.h in Headers */,
+				4C9952C32F582B27009C6DAD /* HXNetworkLayer-Swift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
