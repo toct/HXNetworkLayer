@@ -1,7 +1,7 @@
 
 
 extension DeviceInfoInModel{
-    static let KEYCHAIN_UUID = Bundle.main.bundleIdentifier ?? "Bundle.main.bundleIdentifier"
+    public static let KEYCHAIN_UUID = Bundle.main.bundleIdentifier ?? "Bundle.main.bundleIdentifier"
 
     static func hx_systemVersion() -> String {
         var hx_version = ""
@@ -34,7 +34,7 @@ extension DeviceInfoInModel{
         return String(format: "%f" ,hx_level);
     }
     
-    static func hx_appName() -> String {
+    public static func hx_appName() -> String {
         return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "สุขภาพเครดิต"
     }
     

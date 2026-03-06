@@ -8,30 +8,30 @@
 import SwiftUI
 import Combine
 
-class ViewSetting: ObservableObject {
-    lazy var hx_statusHeight: CGFloat = {
+public class ViewSetting: ObservableObject {
+    public lazy var hx_statusHeight: CGFloat = {
         let hx_height = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.flatMap { $0.windows }.first?.safeAreaInsets.top ?? 0
         return hx_height
     }()
-    let hx_webApp = true
-    @Published var hx_userAppear: Bool = false
-    @Published var hx_tabbarAppear: Bool = true
-    @Published var hx_tabIndex = 0
-    @Published var hx_orderMark = 20
-    @Published var hx_updateType: String = ""
-    @Published var hx_updateClose:Bool = false
-    @Published var hx_praiseCheck:Bool = false
-    @Published var hx_seviceBtnHidden = false
-    @Published var hx_updateOrder = false
-    @Published var hx_root = false
-    var hx_normalUpdateShowed = false
-    var hx_kycComplete = false
-    @Published var hx_runkyc = false
-    @Published var hx_bundId = ""
+    public let hx_webApp = true
+    @Published public var hx_userAppear: Bool = false
+    @Published public var hx_tabbarAppear: Bool = true
+    @Published public var hx_tabIndex = 0
+    @Published public var hx_orderMark = 20
+    @Published public var hx_updateType: String = ""
+    @Published public var hx_updateClose:Bool = false
+    @Published public var hx_praiseCheck:Bool = false
+    @Published public var hx_seviceBtnHidden = false
+    @Published public var hx_updateOrder = false
+    @Published public var hx_root = false
+    public var hx_normalUpdateShowed = false
+    public var hx_kycComplete = false
+    @Published public var hx_runkyc = false
+    @Published public var hx_bundId = ""
 
-    static let shared = ViewSetting()
+    public static let shared = ViewSetting()
     
-    init() {
+    public init() {
         let hx_appearance = UINavigationBarAppearance()
         hx_appearance.configureWithTransparentBackground()
         hx_appearance.titleTextAttributes = [
@@ -47,13 +47,13 @@ class ViewSetting: ObservableObject {
         UITabBar.appearance().isHidden = true // 彻底隐藏系统TabBar
     }
     
-    func hx_setRoot() {
+    public func hx_setRoot() {
         hx_root = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.hx_root = false
         }
     }
-    func hx_kyc() {
+    public func hx_kyc() {
         hx_runkyc = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.hx_runkyc = false

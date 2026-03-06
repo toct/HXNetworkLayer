@@ -1,33 +1,33 @@
 
-class OrderInfoOutModel: Codable  {
-    var hx_alreadyRepayed: String?
-    var hx_applyTime: String?
-    var hx_dueTime: String?
-    var hx_extensionFee: String?
-    var hx_perMonthRepay: String?
-    var hx_termNum: Int?
-    var hx_feeAmount: String?
-    var hx_isExtensionAbled: String?
-    var hx_interestAmo: String?
-    var hx_loanAmount: String?
-    var hx_loanTerm: Int?
-    var hx_loanTermUni: Int?
-    var hx_oId: String
-    var hx_oStatus: Int?
-    var hx_payoutTime: String?
-    var hx_penaltyAmo: String?
-    var hx_penaltyDays: Int
-    var hx_productTermDetail: [TermDetailOutModel]?
-    var hx_receiptAmount: String?
-    var hx_reductionAmo: String?
-    var hx_extensionFeeAmo: String?
-    var hx_repaymentTime: String?
-    var hx_riskTime: String?
-    var hx_remainRepayAmo: String?
-    var hx_showTerm: Int?
-    var hx_taxAmount: String?
-    var hx_totalRepayAmo: String?
-    var hx_content: String?
+public class OrderInfoOutModel: Codable  {
+    public var hx_alreadyRepayed: String?
+    public var hx_applyTime: String?
+    public var hx_dueTime: String?
+    public var hx_extensionFee: String?
+    public var hx_perMonthRepay: String?
+    public var hx_termNum: Int?
+    public var hx_feeAmount: String?
+    public var hx_isExtensionAbled: String?
+    public var hx_interestAmo: String?
+    public var hx_loanAmount: String?
+    public var hx_loanTerm: Int?
+    public var hx_loanTermUni: Int?
+    public var hx_oId: String
+    public var hx_oStatus: Int?
+    public var hx_payoutTime: String?
+    public var hx_penaltyAmo: String?
+    public var hx_penaltyDays: Int
+    public var hx_productTermDetail: [TermDetailOutModel]?
+    public var hx_receiptAmount: String?
+    public var hx_reductionAmo: String?
+    public var hx_extensionFeeAmo: String?
+    public var hx_repaymentTime: String?
+    public var hx_riskTime: String?
+    public var hx_remainRepayAmo: String?
+    public var hx_showTerm: Int?
+    public var hx_taxAmount: String?
+    public var hx_totalRepayAmo: String?
+    public var hx_content: String?
     enum CodingKeys:String, CodingKey {
         case hx_alreadyRepayed = "alreadyRepaymentAmount"
         case hx_applyTime = "applyDate"
@@ -58,7 +58,7 @@ class OrderInfoOutModel: Codable  {
         case hx_totalRepayAmo = "totalRepaymentAmount"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_alreadyRepayed = try container.decodeIfPresent(String.self, forKey: .hx_alreadyRepayed)
         self.hx_applyTime = try container.decodeIfPresent(String.self, forKey: .hx_applyTime)

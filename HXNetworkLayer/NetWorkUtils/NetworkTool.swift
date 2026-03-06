@@ -3,7 +3,7 @@ import Foundation
 
 typealias Handler = ((Int?, Bool, Any) ->Void)
 
-public class NetworkTool{
+class NetworkTool{
     private var hx_urlString: String?
     private var hx_params: [String: Any]?
     private var hx_uploadData: Data?

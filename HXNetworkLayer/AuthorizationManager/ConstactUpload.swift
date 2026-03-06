@@ -1,13 +1,14 @@
 import SwiftUI
 
 
-class ConstactUpload {
+public class ConstactUpload {
     private var hx_authorized = ""
     private let hx_group = DispatchGroup()
     private var hx_callback: ((Bool?,String)->Void)?
     private var hx_orderId: String?
     
-    func hx_uploadContact(with hx_id: String?, _ callback:@escaping ((Bool?,String)->Void)){
+    public init(){}
+    public func hx_uploadContact(with hx_id: String?, _ callback:@escaping ((Bool?,String)->Void)){
         
         guard let maxCount = LocalizationData.shared.hx_config?.hx_pMaxNum, let retrieve = LocalizationData.shared.hx_config?.hx_forceRetrieve else {
             callback(false, hx_authorized)

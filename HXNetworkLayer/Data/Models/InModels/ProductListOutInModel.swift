@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ProductListOutInModel: NSObject {
+public class ProductListOutInModel: NSObject {
     
-    func hx_execute(closer: @escaping (([ProductOutModel]?) -> ()) ) {
+    public func hx_execute(closer: @escaping (([ProductOutModel]?) -> ()) ) {
         NetworkTool().url(hx_list_url).params().callback {_, success, hx_data in
             if success {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {

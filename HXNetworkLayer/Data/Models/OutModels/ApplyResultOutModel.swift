@@ -1,9 +1,9 @@
 
-class ApplyResultOutModel: Codable {
+public class ApplyResultOutModel: Codable {
 
     var hx_isFirst: Bool?
     var hx_isWillingRepay: Int?
-    var hx_orderId: String?
+    public var hx_orderId: String?
     
     enum CodingKeys:String, CodingKey {
         case  hx_isFirst = "isFirst"

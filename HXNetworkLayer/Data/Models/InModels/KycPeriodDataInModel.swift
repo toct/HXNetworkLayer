@@ -1,12 +1,12 @@
 import Foundation
 
-class KycPeriodDataInModel: NSObject, Codable {
-    var hx_kycId: String?
+public class KycPeriodDataInModel: NSObject, Codable {
+    public var hx_kycId: String?
     enum CodingKeys: String, CodingKey {
         case hx_kycId = "kycId"
     }
     
-    func hx_execute(closer: @escaping ((ContactKYCOutModel?)->())) {
+    public func hx_execute(closer: @escaping ((ContactKYCOutModel?)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
 
         NetworkTool().url(hx_kycPeriodData_url).params(hx_dict, signedKeys: ["kycId"]).callback { _, success, hx_data in

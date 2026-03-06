@@ -7,17 +7,17 @@
 
 import Foundation
 
-class CardAddInModel:NSObject, Codable {
-    var hx_defaultFlag: String
-    var hx_recordId: String?
-    var hx_kycCommitItemList: [CommitItemInModel]?
+public class CardAddInModel:NSObject, Codable {
+    public var hx_defaultFlag: String
+    public var hx_recordId: String?
+    public var hx_kycCommitItemList: [CommitItemInModel]?
     enum CodingKeys: String, CodingKey {
         case hx_defaultFlag = "defaultFlag"
         case hx_kycCommitItemList = "kycCommitItemList"
         case hx_recordId = "recordId"
     }
     
-    init(data:[FormCellOutModel]? = nil, flag: String, recordId: String? = nil) {
+    public init(data:[FormCellOutModel]? = nil, flag: String, recordId: String? = nil) {
         var hx_models: [CommitItemInModel] = []
         
         if let hx_datas = data {
@@ -37,7 +37,7 @@ class CardAddInModel:NSObject, Codable {
         hx_recordId = recordId
     }
     
-    func hx_execute(closer: @escaping (([FormCellOutModel]?)->())) {
+    public func hx_execute(closer: @escaping (([FormCellOutModel]?)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         NetworkTool().url(hx_recordId == nil ? hx_addCard_url : hx_updateCard_url).params(hx_dict).callback({ code, success , data in
             if success {

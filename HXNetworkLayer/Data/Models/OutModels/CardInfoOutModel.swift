@@ -7,49 +7,49 @@
 
 import Foundation
 
-class CardInfoOutModel: Codable {
+public class CardInfoOutModel: Codable {
     /// 户名
-    var hx_accountName: String?
+    public var hx_accountName: String?
     /// 账号
-    var hx_accountNo: String?
+    public var hx_accountNo: String?
     /// 账户验证
-    var hx_accountNoVerify: String?
+    public var hx_accountNoVerify: String?
     /// 手机号
-    var hx_accountPhone: String?
+    public var hx_accountPhone: String?
     /// 三方账户标识
-    var hx_accountToken: String?
+    public var hx_accountToken: String?
     /// 账户类型
-    var hx_accountType: String?
+    public var hx_accountType: String?
     /// APP编号
-    var hx_appId: String?
+    public var hx_appId: String?
     /// 银行Code
-    var hx_bankCode: String?
+    public var hx_bankCode: String?
     /// 银行名称
-    var hx_bankName: String?
+    public var hx_bankName: String?
     /// 信用卡号
-    var hx_creditCard: String?
+    public var hx_creditCard: String?
     /// 币种
-    var hx_currency: String?
+    public var hx_currency: String?
     /// 默认卡标记：0否 1是
-    var hx_defaultFlag: String?
+    public var hx_defaultFlag: String?
     /// 银行卡是否可以编辑，0否 1是
-    var hx_editFlag: String?
+    public var hx_editFlag: String?
     /// 交易所
-    var hx_exchange: String?
+    public var hx_exchange: String?
     /// 名字
-    var hx_firstName: String?
+    public var hx_firstName: String?
     /// IFSC
-    var hx_ifsc: String?
+    public var hx_ifsc: String?
     /// 父姓
-    var hx_lastName: String?
+    public var hx_lastName: String?
     /// 绑卡渠道
-    var hx_paymentType: String?
+    public var hx_paymentType: String?
     /// 记录编号
-    var hx_recordId: String?
+    public var hx_recordId: String?
     
-    var hx_userId: String?
+    public var hx_userId: String?
     
-    var hx_bankCardBindId: Int?
+    public var hx_bankCardBindId: Int?
 
     enum CodingKeys:String, CodingKey {
         /// 户名

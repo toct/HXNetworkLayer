@@ -7,14 +7,14 @@
 
 import Foundation
 
-class DrawalDetailInMode: NSObject, Codable {
-    var hx_orderId: String?
-    var hx_productId: String?
+public class DrawalDetailInMode: NSObject, Codable {
+    public var hx_orderId: String?
+    public var hx_productId: String?
     enum CodingKeys: String, CodingKey {
         case hx_orderId = "orderId"
         case hx_productId = "productId"
     }
-    func hx_execute(closer: @escaping ((OrderDetailOutModel) -> ())) {
+    public func hx_execute(closer: @escaping ((OrderDetailOutModel) -> ())) {
         
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         NetworkTool().url(hx_withdrawaldetail_url).params(hx_dict, signedKeys:["orderId"]).callback({_, success, hx_data in

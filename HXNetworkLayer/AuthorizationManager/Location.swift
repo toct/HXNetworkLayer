@@ -1,7 +1,7 @@
 import Foundation
 import CoreLocation
 
-class Location: NSObject, CLLocationManagerDelegate {
+public class Location: NSObject, CLLocationManagerDelegate {
     static let shared = Location()
     
     static let hx_zero = SharedModel.shared.hx_constactValue?["zeroLocation"] as? [String:String] ?? [:]
@@ -17,7 +17,7 @@ class Location: NSObject, CLLocationManagerDelegate {
         hx_locationManager.delegate = self
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         hx_locationManager.stopUpdatingLocation()
         let hx_latitude =  locations.last?.coordinate.latitude.description ?? "-360"
         let hx_longitude = locations.last?.coordinate.longitude.description ?? "-360"
@@ -28,7 +28,7 @@ class Location: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         let hx_authStatus = CLLocationManager.authorizationStatus()
         if hx_authStatus != .denied && hx_authStatus != .restricted {
             hx_locationManager.startUpdatingLocation()
@@ -39,7 +39,7 @@ class Location: NSObject, CLLocationManagerDelegate {
         }
     }
         
-    static func hx_getLocation(_ closer: @escaping CallBackType) {
+    public static func hx_getLocation(_ closer: @escaping CallBackType) {
         let hx_callback: CallBackType = { hx_type, hx_status, hx_data in
             if hx_status == .authorized {
                 hx_uploadBuryPoint("15")

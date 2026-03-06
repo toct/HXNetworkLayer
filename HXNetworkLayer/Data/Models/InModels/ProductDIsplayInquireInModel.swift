@@ -1,7 +1,7 @@
 import Foundation
 
-class ProductDIsplayInquireInModel: NSObject {
-    func hx_execute(closer: @escaping ((Bool) -> ())) {
+public class ProductDIsplayInquireInModel: NSObject {
+    public func hx_execute(closer: @escaping ((Bool) -> ())) {
         NetworkTool().url(hx_productDIsplayInquire_url).params().callback({_, success, hx_data in
             if success {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {

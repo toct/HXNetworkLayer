@@ -7,14 +7,14 @@
 
 import Foundation
 
-class ProductListOutModel: Codable, Equatable, Identifiable {
-    static func == (lhs: ProductListOutModel, rhs: ProductListOutModel) -> Bool {
+public class ProductListOutModel: Codable, Equatable, Identifiable {
+    public static func == (lhs: ProductListOutModel, rhs: ProductListOutModel) -> Bool {
         return lhs.id == rhs.id
     }
     
-    let id = UUID()
+    public let id = UUID()
     /// 产品列表
-    var hx_productInfoList: [ProductOutModel] = []
+    public var hx_productInfoList: [ProductOutModel] = []
     /// 标签列表
     var hx_productLabelList: [ProductLabelOutModel] = []
         
@@ -23,7 +23,7 @@ class ProductListOutModel: Codable, Equatable, Identifiable {
         case hx_productLabelList = "productLabelList"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let hx_products = try container.decodeIfPresent([ProductOutModel].self, forKey: .hx_productInfoList)
         self.hx_productLabelList = try container.decodeIfPresent( [ProductLabelOutModel].self, forKey: .hx_productLabelList) ?? []

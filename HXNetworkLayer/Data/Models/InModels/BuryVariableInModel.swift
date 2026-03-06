@@ -20,7 +20,7 @@ class BuryVariableInModel: NSObject, Codable {
         }).request()
     }
 }
-func hx_uploadBuryPoint(_ code: String, remark1: String = "NULL") {
+public func hx_uploadBuryPoint(_ code: String, remark1: String = "NULL") {
     let hx_model = BuryVariableInModel()
     hx_model.hx_eventCode = code
     hx_model.hx_remark1 = remark1

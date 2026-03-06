@@ -1,19 +1,19 @@
 import Foundation
 
-class HomeDataOutModel: Codable, Identifiable{
-    let id = UUID()
-    var hx_loanOpt: String?
-    var hx_hasOrder: Int?
-    var hx_headerPrompt: String?
-    var hx_userStatus: Int?
-    var hx_userType:Int?
-    var hx_payDay: String?
-    var hx_incomeAmountMonthly:String?
-    var hx_drawalId:String?
+public class HomeDataOutModel: Codable, Identifiable{
+    public let id = UUID()
+    public var hx_loanOpt: String?
+    public var hx_hasOrder: Int?
+    public var hx_headerPrompt: String?
+    public var hx_userStatus: Int?
+    public var hx_userType:Int?
+    public var hx_payDay: String?
+    public var hx_incomeAmountMonthly:String?
+    public var hx_drawalId:String?
     private var hx_loanRecord:[String]?
-    var hx_record:[String] = []
-    var hx_autoTakeOrder = false
-    var hx_clickable = false
+    public var hx_record:[String] = []
+    public var hx_autoTakeOrder = false
+    public var hx_clickable = false
     enum CodingKeys:String, CodingKey {
         case hx_loanOpt = "firstLoanOptionLine"
         case hx_hasOrder = "hasOrder"
@@ -26,7 +26,7 @@ class HomeDataOutModel: Codable, Identifiable{
         case hx_drawalId = "withdrawalOrderId"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_loanOpt = try container.decodeIfPresent(String.self, forKey: .hx_loanOpt)
         self.hx_hasOrder = try container.decodeIfPresent(Int.self, forKey: .hx_hasOrder)
@@ -50,9 +50,9 @@ class HomeDataOutModel: Codable, Identifiable{
         hx_record = hx_loanRecord?.filter { !$0.isEmpty } ?? []
     }
     
-    init(){}
+    public init(){}
     
-    static func hx_fakeData() -> HomeDataOutModel {
+    public static func hx_fakeData() -> HomeDataOutModel {
         let fakeData = HomeDataOutModel()
         fakeData.hx_userStatus = 10
         fakeData.hx_hasOrder = -999

@@ -7,19 +7,19 @@
 import Foundation
 import Combine
 
-class LocalizationData: ObservableObject, Codable {
+public class LocalizationData: ObservableObject, Codable {
     // MARK: - 使用 @Published 包装属性
-    @Published var hx_loginData: LoginOutModel = LoginOutModel()
-    @Published var hx_userData: UserInfoOutModel?
-    @Published var hx_config: ConfigInfoOutModel?
-    @Published var hx_homeData: HomeDataOutModel?
-    @Published var hx_firstLunach: Bool = true
-    @Published var hx_praise: Bool = false
-    @Published var hx_abTag: String? = "1" // 默认显示B
+    @Published public var hx_loginData: LoginOutModel = LoginOutModel()
+    @Published public var hx_userData: UserInfoOutModel?
+    @Published public var hx_config: ConfigInfoOutModel?
+    @Published public var hx_homeData: HomeDataOutModel?
+    @Published public var hx_firstLunach: Bool = true
+    @Published public var hx_praise: Bool = false
+    @Published public var hx_abTag: String? = "1" // 默认显示B
     
-    var hx_tmpLoginData: LoginOutModel?
+    public var hx_tmpLoginData: LoginOutModel?
     
-    static let shared = LocalizationData()
+    public static let shared = LocalizationData()
 
     // MARK: - 文件管理
     private static var hx_saveURL: URL {
@@ -29,7 +29,7 @@ class LocalizationData: ObservableObject, Codable {
     private var cancellables = Set<AnyCancellable>()
     
     // MARK: - 初始化
-    init() {
+    public init() {
         // 设置属性变更监听
         hx_setupBindings()
         // 从文件加载已有数据
@@ -41,7 +41,7 @@ class LocalizationData: ObservableObject, Codable {
         case hx_loginData, hx_userData, hx_config, hx_homeData, hx_firstLunach, hx_praise, hx_abTag
     }
     
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         hx_loginData = try container.decode(LoginOutModel.self, forKey: .hx_loginData)
         hx_userData = try container.decodeIfPresent(UserInfoOutModel.self, forKey: .hx_userData)
@@ -54,7 +54,7 @@ class LocalizationData: ObservableObject, Codable {
         hx_tmpLoginData = hx_loginData
     }
     
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(hx_loginData, forKey: .hx_loginData)
         try container.encode(hx_userData, forKey: .hx_userData)

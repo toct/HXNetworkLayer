@@ -1,15 +1,15 @@
-class OrderOutModel: Codable, Identifiable, Equatable{
-    var id = UUID()
-    var hx_applyTime: String?
-    var hx_dueTime: String?
-    var hx_loanAmount: String?
-    var hx_loanTime: String?
-    var hx_o_id: String?
-    var hx_orderStatus: Int?
-    var hx_p_id: String?
-    var hx_productName: String?
-    var hx_repayTime: String?
-    var hx_accountNo: String?
+public class OrderOutModel: Codable, Identifiable, Equatable{
+    public var id = UUID()
+    public var hx_applyTime: String?
+    public var hx_dueTime: String?
+    public var hx_loanAmount: String?
+    public var hx_loanTime: String?
+    public var hx_o_id: String?
+    public var hx_orderStatus: Int?
+    public var hx_p_id: String?
+    public var hx_productName: String?
+    public var hx_repayTime: String?
+    public var hx_accountNo: String?
 
     enum CodingKeys:String, CodingKey {
         case hx_applyTime = "applyDate"
@@ -22,9 +22,9 @@ class OrderOutModel: Codable, Identifiable, Equatable{
         case hx_productName = "productName"
         case hx_repayTime = "repayDate"
     }
-    init(){}
+    public init(){}
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_applyTime = try container.decodeIfPresent(String.self, forKey: .hx_applyTime)
         self.hx_dueTime = try container.decodeIfPresent(String.self, forKey: .hx_dueTime)
@@ -36,7 +36,7 @@ class OrderOutModel: Codable, Identifiable, Equatable{
         self.hx_productName = try container.decodeIfPresent(String.self, forKey: .hx_productName)
         self.hx_repayTime = try container.decodeIfPresent(String.self, forKey: .hx_repayTime)
     }
-    static func == (lhs: OrderOutModel, rhs: OrderOutModel) -> Bool {
+    public static func == (lhs: OrderOutModel, rhs: OrderOutModel) -> Bool {
         return lhs.id == rhs.id
     }
 }

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-class NewKYCInModel: NSObject {
-    func hx_execute(closer: @escaping ((String?)->())) {
+public class NewKYCInModel: NSObject {
+    public func hx_execute(closer: @escaping ((String?)->())) {
         NetworkTool().url(hx_kycStatus_url).params([:]).callback {code, success, data in
             if success {
                 if let hx_dict = data as? Dictionary<String, Any> {

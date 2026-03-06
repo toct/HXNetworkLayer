@@ -7,8 +7,8 @@
 
 import Foundation
 
-class CardListInModel: NSObject, Codable {
-    func hx_execute(closer: @escaping (([CardInfoOutModel]?)->())) {
+public class CardListInModel: NSObject, Codable {
+    public func hx_execute(closer: @escaping (([CardInfoOutModel]?)->())) {
         NetworkTool().url(hx_cardList_url).params([:]).callback({ code, success , data in
             if success {
                 let hx_data = JsonKit.hx_jsonToModel(data, modelType: CardAssetOutModel.self)

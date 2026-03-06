@@ -1,11 +1,11 @@
 
-class ProductStatusOutModel: Codable {
-    var  hx_loanAmount: String?
-    var  hx_productId: String?
-    var  hx_productLogo: String?
-    var  hx_productName: String?
-    var  hx_reLoanStatus: Int?
-    var  hx_content: String?
+public class ProductStatusOutModel: Codable {
+    public var  hx_loanAmount: String?
+    public var  hx_productId: String?
+    public var  hx_productLogo: String?
+    public var  hx_productName: String?
+    public var  hx_reLoanStatus: Int?
+    public var  hx_content: String?
     enum CodingKeys:String, CodingKey {
         case  hx_loanAmount = "loanAmount"
         case  hx_productId = "productId"

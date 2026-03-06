@@ -1,6 +1,6 @@
 import UIKit
 
-class DeviceInfoInModel: Codable {
+public class DeviceInfoInModel: Codable {
     let hx_androidId: String = "null"
     let hx_gaid: String = "null"
     let hx_uuid: String = AmountOutModel.hx_UUID()
@@ -60,7 +60,7 @@ class DeviceInfoInModel: Codable {
     let hx_videoInternal: String = "-99"
     let hx_imageInternal: String = "-99"
     let hx_albumFile: String = "-99"
-    var hx_orderId: String?
+    public var hx_orderId: String?
     enum CodingKeys: String, CodingKey {
         case hx_androidId = "androidId"
         case hx_gaid = "gaid"
@@ -118,7 +118,7 @@ class DeviceInfoInModel: Codable {
         case hx_orderId = "orderId"
     }
     
-    init(){
+    public init(){
         Idfa.hx_checkAuth { _, _, hx_data in
             self.hx_idfa = hx_data as? String ?? "null"
         }

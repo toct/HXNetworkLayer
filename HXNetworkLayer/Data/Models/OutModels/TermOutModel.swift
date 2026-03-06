@@ -1,28 +1,28 @@
-class TermOutModel: Codable {
-    var  hx_arrivalAm: String?
-    var  hx_borrowingDate: String?
-    var  hx_emiAm: String?
-    var  hx_emiTen: Int?
-    var  hx_feeAmount: String?
-    var  hx_interestAm: String?
-    var  hx_loanTerm: Int?
-    var  hx_pTermItems: [TermDetailOutModel]?
-    var  hx_pTermUnit: Int?
-    var  hx_repaymentAm: String?
-    var  hx_repaymentTime: String?
-    var  hx_showTerm: Int?
-    var  hx_taxAmount: String?
+public class TermOutModel: Codable {
+    public var  hx_arrivalAm: String?
+    public var  hx_borrowingDate: String?
+    public var  hx_emiAm: String?
+    public var  hx_emiTen: Int?
+    public var  hx_feeAmount: String?
+    public var  hx_interestAm: String?
+    public var  hx_loanTerm: Int?
+    public var  hx_pTermItems: [TermDetailOutModel]?
+    public var  hx_pTermUnit: Int?
+    public var  hx_repaymentAm: String?
+    public var  hx_repaymentTime: String?
+    public var  hx_showTerm: Int?
+    public var  hx_taxAmount: String?
     
-    var  hx_dueTime: String?
-    var  hx_totalRepayAmo: String?
-    var  hx_reductionAmo: String?
-    var  hx_alreadyRepayed: String?
-    var  hx_remainRepayAmo: String?
-    var  hx_penaltyAmo: String?
-    var  hx_oId: String?
-    var  hx_isExtensionAbled: String?
-    var  hx_payoutTime: String?
-    var  hx_exFeeAm: String?
+    public var  hx_dueTime: String?
+    public var  hx_totalRepayAmo: String?
+    public var  hx_reductionAmo: String?
+    public var  hx_alreadyRepayed: String?
+    public var  hx_remainRepayAmo: String?
+    public var  hx_penaltyAmo: String?
+    public var  hx_oId: String?
+    public var  hx_isExtensionAbled: String?
+    public var  hx_payoutTime: String?
+    public var  hx_exFeeAm: String?
     
     enum CodingKeys:String, CodingKey {
         case  hx_arrivalAm = "arrivalAmount"
@@ -41,7 +41,7 @@ class TermOutModel: Codable {
         case  hx_exFeeAm = "dueExtensionFeeAmount"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_arrivalAm = try container.decodeIfPresent(String.self, forKey: .hx_arrivalAm)
         self.hx_borrowingDate = try container.decodeIfPresent(String.self, forKey: .hx_borrowingDate)
@@ -58,6 +58,6 @@ class TermOutModel: Codable {
         self.hx_taxAmount = try container.decodeIfPresent(String.self, forKey: .hx_taxAmount)
         self.hx_exFeeAm = try container.decodeIfPresent(String.self, forKey: .hx_exFeeAm)
     }
-    init() {
+    public init() {
     }
 }

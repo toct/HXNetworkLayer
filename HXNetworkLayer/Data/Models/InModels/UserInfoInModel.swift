@@ -1,14 +1,14 @@
 import Foundation
 
-class UserInfoInModel: NSObject, Codable {
-    var hx_adid: String?
-    var hx_smsSwitch: String?
+public class UserInfoInModel: NSObject, Codable {
+    public var hx_adid: String?
+    public var hx_smsSwitch: String?
     enum CodingKeys: String, CodingKey {
         case hx_adid = "adid"
         case hx_smsSwitch = "smsSwitch"
     }
         
-    func hx_execute(showHub: Bool = true, closer: @escaping ((UserInfoOutModel?)->())) {
+    public func hx_execute(showHub: Bool = true, closer: @escaping ((UserInfoOutModel?)->())) {
         
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         

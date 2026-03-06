@@ -527,7 +527,7 @@
 				4C74D69E2F567A4C00D770C4 /* Sources */,
 				4C74D69F2F567A4C00D770C4 /* Frameworks */,
 				4C74D6A02F567A4C00D770C4 /* Resources */,
-				3C0E1CE777895FD86ECEDDD6 /* [CP] Embed Pods Frameworks */,
+				8D98563C35CC0FA791099316 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -595,7 +595,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C0E1CE777895FD86ECEDDD6 /* [CP] Embed Pods Frameworks */ = {
+		8D98563C35CC0FA791099316 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -603,13 +603,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

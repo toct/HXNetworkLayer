@@ -1,10 +1,10 @@
-class EchoMapOutModel: Codable {
-    var hx_cardNo: String?
-    var hx_firstName: String?
-    var hx_lastName: String?
-    var hx_middleName: String?
-    var hx_name: String?
-    var hx_willExecuteStepNumber: String?
+public class EchoMapOutModel: Codable {
+    public var hx_cardNo: String?
+    public var hx_firstName: String?
+    public var hx_lastName: String?
+    public var hx_middleName: String?
+    public var hx_name: String?
+    public var hx_willExecuteStepNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case hx_cardNo = "cardNo"
@@ -15,7 +15,7 @@ class EchoMapOutModel: Codable {
         case hx_willExecuteStepNumber = "willExecuteStepNumber"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_cardNo = try container.decodeIfPresent(String.self, forKey: .hx_cardNo)
         self.hx_firstName = try container.decodeIfPresent(String.self, forKey: .hx_firstName)

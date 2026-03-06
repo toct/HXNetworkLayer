@@ -1,23 +1,23 @@
-class ConfigInfoOutModel: Codable {
-    var hx_email: String?
-    var hx_feedbackG: Int?
-    var hx_policyLk: String?
-    var hx_agreeMtLk: String?
-    var hx_officialLk: String?
-    var hx_desireLK: String?
-    var hx_loanLk: String?
-    var hx_feedbackLk: String?
-    var hx_conUsLk: String?
-    var hx_kycLk: String?
-    var hx_editBankLk: String?
-    var hx_pApplyLk: String?
-    var hx_oDetailsLk: String?
-    var hx_applySuccLk: String?
-    var hx_pMaxNum: Int?
-    var hx_pPerNum: Int?
-    var hx_forceRetrieve: Int?
-    var hx_dynamicParame: ConfigSubOutModel?
-    var hx_livenessDetection: String?
+public class ConfigInfoOutModel: Codable {
+    public var hx_email: String?
+    public var hx_feedbackG: Int?
+    public var hx_policyLk: String?
+    public var hx_agreeMtLk: String?
+    public var hx_officialLk: String?
+    public var hx_desireLK: String?
+    public var hx_loanLk: String?
+    public var hx_feedbackLk: String?
+    public var hx_conUsLk: String?
+    public var hx_kycLk: String?
+    public var hx_editBankLk: String?
+    public var hx_pApplyLk: String?
+    public var hx_oDetailsLk: String?
+    public var hx_applySuccLk: String?
+    public var hx_pMaxNum: Int?
+    public var hx_pPerNum: Int?
+    public var hx_forceRetrieve: Int?
+    public var hx_dynamicParame: ConfigSubOutModel?
+    public var hx_livenessDetection: String?
     enum CodingKeys:String, CodingKey {
         case hx_policyLk = "policyHref"
         case hx_agreeMtLk = "agreementHref"
@@ -40,7 +40,7 @@ class ConfigInfoOutModel: Codable {
         case hx_livenessDetection = "livenessDetectionMethod"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_policyLk = try container.decodeIfPresent(String.self, forKey: .hx_policyLk)
         self.hx_agreeMtLk = try container.decodeIfPresent(String.self, forKey: .hx_agreeMtLk)
@@ -65,10 +65,10 @@ class ConfigInfoOutModel: Codable {
     
 }
 
-class ConfigSubOutModel: Codable {
-    var hx_fjtip: String?
-    var hx_contactCount: String?
-    var hx_customerH5: String?
+public class ConfigSubOutModel: Codable {
+    public var hx_fjtip: String?
+    public var hx_contactCount: String?
+    public var hx_customerH5: String?
     enum CodingKeys:String, CodingKey {
         case hx_fjtip = "fjtip"
         case hx_contactCount = "contactCount"

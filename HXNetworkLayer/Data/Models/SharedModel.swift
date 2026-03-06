@@ -5,26 +5,26 @@ import CoreTelephony
 import CryptoKit
 import CommonCrypto
 
-class SharedModel: NSObject
+public class SharedModel: NSObject
 {
     private let hx_monitor = NWPathMonitor()
 
-    let hx_debounce = Debouncer(delay: 0.5)
+    public let hx_debounce = Debouncer(delay: 0.5)
 
-    static let shared = SharedModel()
+    public static let shared = SharedModel()
             
-    var hx_updateData: VersionOutModel?
+    public var hx_updateData: VersionOutModel?
         
-    var  hx_kyc:KYCSOutModel?
+    public var  hx_kyc:KYCSOutModel?
         
-    lazy var adjConfig: ADJConfig? = {
+    public lazy var adjConfig: ADJConfig? = {
         let adj = ADJConfig(appToken: "pma67gx28zk0", environment: ADJEnvironmentProduction, suppressLogLevel: true)
         adj?.logLevel = ADJLogLevel.verbose
         Adjust.initSdk(adj)
         return adj
     }()
     
-    override init() {
+    public override init() {
         super.init()
         startMonitoring()
     }
@@ -53,7 +53,7 @@ class SharedModel: NSObject
         hx_monitor.start(queue: DispatchQueue.global())
     }
 
-    lazy var hx_constactValue: [String:Any]? = {
+    public lazy var hx_constactValue: [String:Any]? = {
         do {
             let hx_name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
             guard let hx_url = Bundle.main.url(forResource: hx_name, withExtension: "data") else { return nil}
@@ -71,11 +71,11 @@ class SharedModel: NSObject
         return nil
     }()
         
-    func hx_isForceUpdate() -> Bool {
+    public func hx_isForceUpdate() -> Bool {
         return hx_updateData?.hx_type == .hx_forceUpdate
     }
     
-    static func hx_SIMInfo() -> [String: String] {
+    public static func hx_SIMInfo() -> [String: String] {
         let info = CTTelephonyNetworkInfo().serviceSubscriberCellularProviders
         let values = info?.values.map { $0.carrierName } ?? []
         
@@ -90,7 +90,7 @@ class SharedModel: NSObject
                 "sim2": hx_card2Network!]
     }
     
-    static func hx_submitAdid() {
+    public static func hx_submitAdid() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             Adjust.adid { adidStr in
                 if let adid = adidStr {

@@ -1,15 +1,15 @@
 import Foundation
 
-class SendVerifyNumberInModel: NSObject, Codable {
-    var hx_mobile: String?
-    var hx_verifyType: String? = "1"
+public class SendVerifyNumberInModel: NSObject, Codable {
+    public var hx_mobile: String?
+    public var hx_verifyType: String? = "1"
 
     enum CodingKeys: String, CodingKey {
         case hx_mobile = "mobile"
         case hx_verifyType = "verifyType"
     }
     
-    func hx_execute(closer: @escaping ((Bool) -> ())) {
+    public func hx_execute(closer: @escaping ((Bool) -> ())) {
         if !hx_checkParametersValid() {
             closer(false)
             return

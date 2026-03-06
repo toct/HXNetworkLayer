@@ -3,7 +3,7 @@
 import Foundation
 import AVFoundation
 
-class Camera: NSObject {
+public class Camera: NSObject {
     static let manager = Camera()
 
     var hx_callBack:CallBackType?
@@ -31,7 +31,7 @@ class Camera: NSObject {
         })
     }
         
-    static func hx_checkAuth(_ closer: @escaping CallBackType) {
+    public static func hx_checkAuth(_ closer: @escaping CallBackType) {
         let hx_callback: CallBackType = { hx_type, hx_status, hx_data in
             if hx_status == .authorized || hx_status == .limited {
                 hx_uploadBuryPoint("11")

@@ -1,33 +1,33 @@
 
 import Combine
-class ProductDetailOutModel: Codable, ObservableObject {
+public class ProductDetailOutModel: Codable, ObservableObject {
 
-    var hx_cardArr: [CardDetailOutModel]?
-    var hx_amountOptions: [AmountOutModel]?
-    var hx_message: String?
-    var hx_conntent: String?
-    var hx_hotline: String?
-    var hx_productId: String?
-    var hx_orderId: String?
-    var hx_productLogo: String?
-    var hx_productName: String?
-    var hx_pTermUnit: Int?
-    var hx_isOrderData = false
-    var hx_orderType:String?
-    var hx_oStatus: Int = 0
+    public var hx_cardArr: [CardDetailOutModel]?
+    public var hx_amountOptions: [AmountOutModel]?
+    public var hx_message: String?
+    public var hx_conntent: String?
+    public var hx_hotline: String?
+    public var hx_productId: String?
+    public var hx_orderId: String?
+    public var hx_productLogo: String?
+    public var hx_productName: String?
+    public var hx_pTermUnit: Int?
+    public var hx_isOrderData = false
+    public var hx_orderType:String?
+    public var hx_oStatus: Int = 0
 
-    @Published var hx_selectAmountIndex: Int? {
+    @Published public var hx_selectAmountIndex: Int? {
         didSet{
             hx_selectAmountAndTerm()
         }
     }
-    @Published var hx_selectTermIndex: Int?{
+    @Published public var hx_selectTermIndex: Int?{
         didSet{
             hx_selectAmountAndTerm()
         }
     }
-    @Published var hx_selectAmount: Int?
-    @Published var hx_selectTerm: Int?
+    @Published public var hx_selectAmount: Int?
+    @Published public var hx_selectTerm: Int?
     enum CodingKeys:String, CodingKey {
         case hx_amountOptions = "amountDetailList"
         case hx_cardArr = "bankCardList"
@@ -40,8 +40,8 @@ class ProductDetailOutModel: Codable, ObservableObject {
         case hx_pTermUnit = "productTermUnit"
     }
     
-    init() {}
-    required init(from decoder: any Decoder) throws {
+    public init() {}
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_amountOptions = try container.decodeIfPresent([AmountOutModel].self, forKey: .hx_amountOptions)
         self.hx_cardArr = try container.decodeIfPresent([CardDetailOutModel].self, forKey: .hx_cardArr)
@@ -110,7 +110,7 @@ class ProductDetailOutModel: Codable, ObservableObject {
         }
     }
     
-    func hx_RepayPlans() -> [TermDetailOutModel]? {
+    public func hx_RepayPlans() -> [TermDetailOutModel]? {
         
         if let amountIndex = hx_selectAmountIndex, let termIndex = hx_selectTermIndex, let amounts = hx_amountOptions, amounts.count > amountIndex ,let termOption = amounts[amountIndex].hx_termOptions, termOption.count > termIndex, let termItems = termOption[termIndex].hx_pTermItems {
             return termItems
@@ -118,7 +118,7 @@ class ProductDetailOutModel: Codable, ObservableObject {
         return nil
     }
     
-    func hx_loanTerms() -> [TermOutModel]? {
+    public func hx_loanTerms() -> [TermOutModel]? {
         guard let amountIndex = hx_selectAmountIndex, let amounts = hx_amountOptions, amounts.count > amountIndex ,let termOption = amounts[amountIndex].hx_termOptions else {
             return nil
         }

@@ -1,20 +1,20 @@
 
-class VersionOutModel: Codable{
-    enum AppUpdateType {
+public class VersionOutModel: Codable{
+    public enum AppUpdateType {
         case hx_normalUpdate
         case hx_forceUpdate
     }
-    var hx_latestForceVersion: String?
-    var hx_latestForceVersionContent: String?
-    var hx_latestForceVersionUrl: String?
-    var hx_latestVersion: String?
-    var hx_latestVersionContent: String?
-    var hx_latestVersionUrl: String?
+    public var hx_latestForceVersion: String?
+    public var hx_latestForceVersionContent: String?
+    public var hx_latestForceVersionUrl: String?
+    public var hx_latestVersion: String?
+    public var hx_latestVersionContent: String?
+    public var hx_latestVersionUrl: String?
     
-    var hx_type: AppUpdateType?
-    var hx_url: URL?
-    var hx_updateVersion: String?
-    required init(from decoder: any Decoder) throws {
+    public var hx_type: AppUpdateType?
+    public var hx_url: URL?
+    public var hx_updateVersion: String?
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_latestForceVersion = try container.decodeIfPresent(String.self, forKey: .hx_latestForceVersion)
         self.hx_latestForceVersionContent = try container.decodeIfPresent(String.self, forKey: .hx_latestForceVersionContent)

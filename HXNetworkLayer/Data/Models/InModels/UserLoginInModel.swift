@@ -1,8 +1,8 @@
 import Foundation
 
-class UserLoginInModel: NSObject, Codable {
-    var hx_verifyCode: String?
-    var hx_mobile: String?
+public class UserLoginInModel: NSObject, Codable {
+    public var hx_verifyCode: String?
+    public var hx_mobile: String?
     var hx_serialNo: String? = AmountOutModel.hx_UUID()
     var hx_imei: String? = "null"
     var hx_longitude: String? = "-360"
@@ -17,7 +17,7 @@ class UserLoginInModel: NSObject, Codable {
         case hx_latitude = "latitude"
     }
     
-    func hx_execute(closer: @escaping ((Bool) -> ())) {
+    public func hx_execute(closer: @escaping ((Bool) -> ())) {
         if !hx_checkParametersValid() {
             closer(false)
             return

@@ -1,7 +1,7 @@
 
-class ContactKYCOutModel: Codable {
+public class ContactKYCOutModel: Codable {
     var  hx_kycId: String
-    var  hx_kycItemList: [FormCellOutModel]
+    public var  hx_kycItemList: [FormCellOutModel]
     var  hx_kycType: String
     
     enum CodingKeys:String, CodingKey {
@@ -11,7 +11,7 @@ class ContactKYCOutModel: Codable {
         case  hx_kycType = "kycType"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_kycId = try container.decode(String.self, forKey: .hx_kycId)
         let hx_values = try container.decode([FormCellOutModel].self, forKey: .hx_kycItemList)

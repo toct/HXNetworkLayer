@@ -1,6 +1,6 @@
 
-class OrdersOutModel: Codable {
-    var hx_orderArr: [OrderOutModel]
+public class OrdersOutModel: Codable {
+    public var hx_orderArr: [OrderOutModel]
     enum CodingKeys:String, CodingKey {
         case hx_orderArr = "orderList"
     }

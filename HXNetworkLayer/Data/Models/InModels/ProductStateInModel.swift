@@ -1,12 +1,12 @@
 import Foundation
-class ProductStateInModel: NSObject, Codable {
-    var hx_productId: String?
+public class ProductStateInModel: NSObject, Codable {
+    public var hx_productId: String?
 
     enum CodingKeys: String, CodingKey {
         case hx_productId = "productId"
     }
     
-    func hx_execute( closer: @escaping ((ProductStatusOutModel?)->())) {
+    public func hx_execute( closer: @escaping ((ProductStatusOutModel?)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         NetworkTool().url(hx_checkproductsState_url).params(hx_dict).callback({ _, success, hx_data in
             if success {

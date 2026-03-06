@@ -1,22 +1,22 @@
-class ProductOutModel: Codable, Equatable {
-    static func == (lhs: ProductOutModel, rhs: ProductOutModel) -> Bool {
+public class ProductOutModel: Codable, Equatable {
+    public static func == (lhs: ProductOutModel, rhs: ProductOutModel) -> Bool {
         return lhs.hx_productLogo == rhs.hx_productLogo &&
                lhs.hx_productId == rhs.hx_productId &&
                lhs.hx_productName == rhs.hx_productName
     }
-    var hx_highAmount: String?
-    var hx_highestTerm: String?
-    var hx_defaultLoanTerm: Int?
-    var hx_lowAmount: String?
-    var hx_lowestLoanInterestRate: String?
-    var hx_productId: String?
-    var hx_productLabel: String?
-    var hx_productLogo: String?
-    var hx_productName: String?
+    public var hx_highAmount: String?
+    public var hx_highestTerm: String?
+    public var hx_defaultLoanTerm: Int?
+    public var hx_lowAmount: String?
+    public var hx_lowestLoanInterestRate: String?
+    public var hx_productId: String?
+    public var hx_productLabel: String?
+    public var hx_productLogo: String?
+    public var hx_productName: String?
     
-    var hx_showAmo: String?
-    var hx_showRate: String?
-    var hx_selected: Bool?
+    public var hx_showAmo: String?
+    public var hx_showRate: String?
+    public var hx_selected: Bool?
     
     enum CodingKeys:String, CodingKey {
         case hx_highAmount = "highAmount"
@@ -30,9 +30,9 @@ class ProductOutModel: Codable, Equatable {
         case hx_defaultLoanTerm = "defaultLoanTerm"
         
     }
-    init(){}
+    public init(){}
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_highAmount = try container.decodeIfPresent(String.self, forKey: .hx_highAmount)
         self.hx_highestTerm = try container.decodeIfPresent(String.self, forKey: .hx_highestTerm)

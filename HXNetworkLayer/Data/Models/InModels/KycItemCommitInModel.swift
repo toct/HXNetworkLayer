@@ -1,6 +1,6 @@
 import Foundation
 
-class KycItemCommitInModel: NSObject, Codable {
+public class KycItemCommitInModel: NSObject, Codable {
     var hx_kycId: String?
     var hx_itemCode: String?
     var hx_itemValue: String?
@@ -13,13 +13,13 @@ class KycItemCommitInModel: NSObject, Codable {
         case hx_itemValueType = "itemValueType"
     }
     
-    init(data:FormCellOutModel, hx_id: String) {
+    public init(data:FormCellOutModel, hx_id: String) {
         hx_itemCode = data.hx_opionsCode
         hx_itemValue = data.hx_optValue
         hx_itemValueType = data.hx_optType
         hx_kycId = hx_id
     }
-    func hx_execute(closer: @escaping ((Bool, KYCItemUploadOutModel?) -> ())) {
+    public func hx_execute(closer: @escaping ((Bool, KYCItemUploadOutModel?) -> ())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
 
         NetworkTool().url(hx_kycItemCommit_url).params(hx_dict, signedKeys: ["kycId","itemCode","itemValueType","itemValue"]).callback { _, success, hx_data in

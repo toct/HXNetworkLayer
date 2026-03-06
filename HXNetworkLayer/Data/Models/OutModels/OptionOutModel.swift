@@ -1,8 +1,8 @@
-class OptionOutModel:NSObject, Codable {
+public class OptionOutModel:NSObject, Codable {
     
-    var hx_opetionKey: String?
-    var hx_opetionLabel: String?
-    var hx_opetionSort: Int?
+    public var hx_opetionKey: String?
+    public var hx_opetionLabel: String?
+    public var hx_opetionSort: Int?
     private var hx_key: String?
     private var hx_label: String?
     private var hx_sort: Int?
@@ -14,14 +14,14 @@ class OptionOutModel:NSObject, Codable {
         case hx_label = "label"
         case hx_sort = "sort"
     }
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_opetionKey = try container.decodeIfPresent(String.self, forKey: .hx_opetionKey) ?? container.decodeIfPresent(String.self, forKey: .hx_key)
         self.hx_opetionLabel = try container.decodeIfPresent(String.self, forKey: .hx_opetionLabel) ?? container.decodeIfPresent(String.self, forKey: .hx_label)
         self.hx_opetionSort = try container.decodeIfPresent(Int.self, forKey: .hx_opetionSort) ?? container.decodeIfPresent(Int.self, forKey: .hx_sort)
     }
     
-    init(hx_opetionKey: String? = nil, hx_opetionLabel: String? = nil, hx_opetionSort: Int? = nil) {
+    public init(hx_opetionKey: String? = nil, hx_opetionLabel: String? = nil, hx_opetionSort: Int? = nil) {
         self.hx_opetionKey = hx_opetionKey
         self.hx_opetionLabel = hx_opetionLabel
         self.hx_opetionSort = hx_opetionSort

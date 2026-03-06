@@ -1,9 +1,9 @@
 
-class KYCSOutModel: Codable
+public class KYCSOutModel: Codable
 {
     private var hx_remoteKYCFlow: [String]?
     
-    var hx_currentKYCId: String?
+    public var hx_currentKYCId: String?
     
     private var hx_kycProcedure: [KycPeriodOutModel]?
     
@@ -20,7 +20,7 @@ class KYCSOutModel: Codable
         }
         return nil
     }
-    required init(from decoder: any Decoder) throws {
+    required public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_kycProcedure = try container.decodeIfPresent([KycPeriodOutModel].self, forKey: .hx_kycProcedure)
         hx_setupProperties()

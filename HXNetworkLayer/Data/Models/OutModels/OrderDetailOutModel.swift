@@ -1,12 +1,12 @@
 
 import Combine
-class OrderDetailOutModel: Codable, ObservableObject {
-    var hx_bankCard: CardDetailOutModel?
-    var hx_isWillingRepay: Int?
-    var hx_orderDetail: OrderInfoOutModel?
-    var hx_product: ProductOverOutModel?
-    var hx_message : String?
-    @Published var hx_productModel: ProductDetailOutModel?
+public class OrderDetailOutModel: Codable, ObservableObject {
+    public var hx_bankCard: CardDetailOutModel?
+    public var hx_isWillingRepay: Int?
+    public var hx_orderDetail: OrderInfoOutModel?
+    public var hx_product: ProductOverOutModel?
+    public var hx_message : String?
+    @Published public var hx_productModel: ProductDetailOutModel?
     enum CodingKeys:String, CodingKey {
         case hx_bankCard = "bankCard"
         case hx_isWillingRepay = "isWillingRepay"
@@ -15,7 +15,7 @@ class OrderDetailOutModel: Codable, ObservableObject {
         case hx_message = "message"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_bankCard = try container.decodeIfPresent(CardDetailOutModel.self, forKey: .hx_bankCard)
         self.hx_isWillingRepay = try container.decodeIfPresent(Int.self, forKey: .hx_isWillingRepay)
@@ -25,7 +25,7 @@ class OrderDetailOutModel: Codable, ObservableObject {
         
         hx_setupProperties()
     }
-    init() {}
+    public init() {}
     
     func hx_setupProperties() {
         

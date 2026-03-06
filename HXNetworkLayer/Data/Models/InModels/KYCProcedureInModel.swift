@@ -1,7 +1,7 @@
 import Foundation
 
-class KYCProcedureInModel: NSObject {
-    func hx_execute(closer: @escaping ((KYCSOutModel?)->())) {
+public class KYCProcedureInModel: NSObject {
+    public func hx_execute(closer: @escaping ((KYCSOutModel?)->())) {
         NetworkTool().url(hx_getKYCProcedure_url).params().callback {_, success, hx_data in
             if success {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {

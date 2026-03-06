@@ -1,13 +1,13 @@
-class CardDetailOutModel: Codable {
-    var hx_accountName: String?
-    var hx_accountNo: String?
-    var hx_bankCode: String?
-    var hx_bindId: String?
-    var hx_bankName: String?
-    var hx_creditCard: String?
-    var hx_accountType: String?
-    var hx_identityNo: String?
-    var hx_accountPhone: String?
+public class CardDetailOutModel: Codable {
+    public var hx_accountName: String?
+    public var hx_accountNo: String?
+    public var hx_bankCode: String?
+    public var hx_bindId: String?
+    public var hx_bankName: String?
+    public var hx_creditCard: String?
+    public var hx_accountType: String?
+    public var hx_identityNo: String?
+    public var hx_accountPhone: String?
     enum CodingKeys:String, CodingKey {
         case hx_accountName = "accountName"
         case hx_accountNo = "accountNo"

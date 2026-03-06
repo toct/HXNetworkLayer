@@ -1,6 +1,6 @@
 import Foundation
 
-class HtmlParamModel: Codable {
+public class HtmlParamModel: Codable {
     var hx_baseUrl: String? = SwitchHostAddress.shared.addresss()
     var hx_token: String? = LocalizationData.shared.hx_loginData.hx_token
     var hx_userId: String? = LocalizationData.shared.hx_loginData.hx_userId
@@ -12,13 +12,13 @@ class HtmlParamModel: Codable {
     var hx_adContent: String? = LocalizationData.shared.hx_abTag
     var hx_deviceId: String? = AmountOutModel.hx_UUID()
     var hx_kycId: String?
-    var hx_productId: String?
-    var hx_orderId: String?
+    public var hx_productId: String?
+    public var hx_orderId: String?
     var hx_bindId: String?
-    var hx_orderType: String?
+    public var hx_orderType: String?
     
     ///   - hx_orderType: 待提现订单为1，否则为nil
-    init(hx_kycId: String? = nil, hx_productId: String? = nil, hx_orderId: String? = nil, hx_orderType: String? = nil, hx_bindId: String? = nil) {
+    public init(hx_kycId: String? = nil, hx_productId: String? = nil, hx_orderId: String? = nil, hx_orderType: String? = nil, hx_bindId: String? = nil) {
         self.hx_kycId = hx_kycId
         self.hx_productId = hx_productId
         self.hx_orderId = hx_orderId
@@ -44,7 +44,7 @@ class HtmlParamModel: Codable {
         case hx_orderType = "orderType"
     }
     
-    static func hx_UA() -> String {
+    public static func hx_UA() -> String {
         let version = DeviceInfoInModel.hx_appVersion()
         let deviceType = ApplyResultOutModel.hx_deviceTypeString()
         let deviceModel = ApplyResultOutModel.hx_deviceCategoryName()
@@ -52,8 +52,7 @@ class HtmlParamModel: Codable {
         return "\(APPID)/\(version)(Apple;\(deviceType);\(deviceModel);iOS \(systemVersion);)"
     }
     
-    func hx_coverToString() -> String? {
-        
+    public func hx_coverToString() -> String? {
         do{
             let data = try JSONEncoder().encode(self)
             return String(data: data, encoding: .utf8)

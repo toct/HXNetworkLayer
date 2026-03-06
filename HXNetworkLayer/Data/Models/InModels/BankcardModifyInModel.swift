@@ -1,6 +1,6 @@
 import Foundation
 
-class BankcardModifyInModel: NSObject, Codable {
+public class BankcardModifyInModel: NSObject, Codable {
     
     var hx_bankCode: String?
     var hx_accountNo: String?
@@ -16,7 +16,7 @@ class BankcardModifyInModel: NSObject, Codable {
         case hx_accountPhone = "accountPhone"
     }
     
-    init(data:[FormCellOutModel]) {
+    public init(data:[FormCellOutModel]) {
         
         let hx_data = data.reduce(into: [String: String]()) { dict, hx_model in
             dict[hx_model.hx_opionsCode] = hx_model.hx_optValue
@@ -28,7 +28,7 @@ class BankcardModifyInModel: NSObject, Codable {
         hx_accountPhone = hx_data["account_phone"]
     }
     
-    func hx_execute( closer: @escaping ((Bool) -> ())) {
+    public func hx_execute( closer: @escaping ((Bool) -> ())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         
         NetworkTool().url(hx_bankCardModify_url).params(hx_dict, signedKeys: ["accountType","bankCode","accountNo"]).callback {  _, success, _ in

@@ -1,17 +1,17 @@
 import UIKit
 
-class FormCellOutModel: Codable, Identifiable {
-    var  hx_opions: [OptionOutModel]?
-    var  hx_required: Int = 1
-    var  hx_opionsCode: String
-    var  hx_opionsName: String
-    var  hx_opionsSort: Int
-    var  hx_opionsStatus: Int?
-    var  hx_opionsType: Int
-    var  hx_expression: String?
-    var  hx_optDisplay: String?
-    var  hx_optValue: String?
-    var  hx_optType: String?
+public class FormCellOutModel: Codable, Identifiable {
+    public var  hx_opions: [OptionOutModel]?
+    public var  hx_required: Int = 1
+    public var  hx_opionsCode: String
+    public var  hx_opionsName: String
+    public var  hx_opionsSort: Int
+    public var  hx_opionsStatus: Int?
+    public var  hx_opionsType: Int
+    public var  hx_expression: String?
+    public var  hx_optDisplay: String?
+    public var  hx_optValue: String?
+    public var  hx_optType: String?
     enum CodingKeys:String, CodingKey {
         case  hx_opions = "buttonList"
         case  hx_required = "isRequired"
@@ -23,7 +23,7 @@ class FormCellOutModel: Codable, Identifiable {
         case  hx_expression = "regularExpression"
     }
     
-    init(hx_opionsCode: String, hx_opionsName: String, hx_opionsSort: Int) {
+    public init(hx_opionsCode: String, hx_opionsName: String, hx_opionsSort: Int) {
         self.hx_opions = []
         self.hx_required = 1
         self.hx_opionsCode = hx_opionsCode
@@ -36,14 +36,14 @@ class FormCellOutModel: Codable, Identifiable {
         self.hx_optType = nil
     }
     
-    func hx_selectCell() -> Bool {
+    public func hx_selectCell() -> Bool {
         if let hx_opions = hx_opions, !hx_opions.isEmpty || hx_opionsCode == "bank_code" {
             return true
         }
         return false
     }
     
-    func hx_keyboardType() -> UIKeyboardType {
+    public func hx_keyboardType() -> UIKeyboardType {
         switch hx_opionsCode {
         case "child_count", "account_no", "confirm_account_no", "zip_code", "Telegram", "LINE", "identity_no", "account_phone":
             return .numberPad
@@ -54,7 +54,7 @@ class FormCellOutModel: Codable, Identifiable {
         }
     }
     
-    func hx_textInput(_ input: String) -> String {
+    public func hx_textInput(_ input: String) -> String {
         var hx_value = input
         
         // 数字过滤

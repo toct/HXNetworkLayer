@@ -5,11 +5,11 @@
 //  Created by mc on 3/3/26.
 //
 
-enum CheckType {
+public enum CheckType {
     case authorization
     case inquire
 }
-enum PermissionStatus {
+public enum PermissionStatus {
     case notDetermined
     case authorized
     case limited
@@ -17,7 +17,7 @@ enum PermissionStatus {
     case denied
 }
 
-typealias CallBackType = ((CheckType, PermissionStatus, Any?) -> ())
+public typealias CallBackType = ((CheckType, PermissionStatus, Any?) -> ())
 
 let APPID = "liuyuzhetextph116"
 let SALT = "SJDYhC05rsAvTnFv" // tai test salt

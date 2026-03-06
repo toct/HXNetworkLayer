@@ -1,9 +1,9 @@
 
 import UIKit
 
-class JsonKit{
+public class JsonKit{
  
-    static func hx_jsonToString(_ obj:Any?) ->String? {
+    public static func hx_jsonToString(_ obj:Any?) ->String? {
         guard let obj = obj else {
             return nil
         }
@@ -17,7 +17,7 @@ class JsonKit{
         }
     }
     
-    static func hx_jsonToModel<T:Codable>(_ obj:Any?,modelType:T.Type) ->T? {
+    public static func hx_jsonToModel<T:Codable>(_ obj:Any?,modelType:T.Type) ->T? {
         guard let obj = obj else {
             return nil
         }
@@ -44,7 +44,7 @@ class JsonKit{
         }
     }
         
-    static func hx_modelToJsonObject<T:Codable>(obj:T) -> [String: Any]? {
+    public static func hx_modelToJsonObject<T:Codable>(obj:T) -> [String: Any]? {
         do{
             let data = try JSONEncoder().encode(obj)
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]

@@ -1,6 +1,6 @@
-class AmountOutModel: Codable {
-    var  hx_loanAmount: String?
-    var  hx_termOptions: [TermOutModel]?
+public class AmountOutModel: Codable {
+    public var  hx_loanAmount: String?
+    public var  hx_termOptions: [TermOutModel]?
     
     enum CodingKeys:String, CodingKey {
         case  hx_loanAmount = "loanAmount"
@@ -8,7 +8,7 @@ class AmountOutModel: Codable {
     }
     
     
-    static func hx_UUID() -> String {
+    public static func hx_UUID() -> String {
         var uuid = self.hx_readKeychainQuery(service: DeviceInfoInModel.KEYCHAIN_UUID)
         if uuid as! String == "" {
             uuid = hx_IDFV()

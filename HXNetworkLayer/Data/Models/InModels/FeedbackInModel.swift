@@ -1,12 +1,12 @@
 import Foundation
 
-class FeedbackInModel: NSObject, Codable {
-    var hx_description: String?
-    var hx_pictureUrl: String?
-    var hx_questionType: String? = "1"
-    var hx_userMobile: String?
-    var hx_photos: [UIImage]?
-    var hx_callback: ((Bool)->Void)?
+public class FeedbackInModel: NSObject, Codable {
+    public var hx_description: String?
+    public var hx_pictureUrl: String?
+    public var hx_questionType: String? = "1"
+    public var hx_userMobile: String?
+    public var hx_photos: [UIImage]?
+    public var hx_callback: ((Bool)->Void)?
     let serialQueue = DispatchQueue(label: "com.example.imageUploader.serialQueue")
     enum CodingKeys: String, CodingKey {
         case hx_description = "description"
@@ -15,7 +15,7 @@ class FeedbackInModel: NSObject, Codable {
         case hx_userMobile = "userMobile"
     }
     
-    func hx_execute( closer: @escaping ((Bool)->Void)) {
+    public func hx_execute( closer: @escaping ((Bool)->Void)) {
         hx_callback = closer
         
         var datas: [Data] = []

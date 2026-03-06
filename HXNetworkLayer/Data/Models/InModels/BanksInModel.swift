@@ -1,8 +1,8 @@
 import Foundation
 
-class BanksInModel: NSObject {
+public class BanksInModel: NSObject {
     
-    func hx_execute( _ closer: @escaping (([OptionOutModel]?)->())) {
+    public func hx_execute( _ closer: @escaping (([OptionOutModel]?)->())) {
         NetworkTool().url(hx_bank).params().callback{ code, success, hx_data in
             if success {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {

@@ -1,5 +1,5 @@
-class StatusesOutModel: Codable {
-    var hx_pStatusArr: [ProductStatusOutModel]?
+public class StatusesOutModel: Codable {
+    public var hx_pStatusArr: [ProductStatusOutModel]?
     enum CodingKeys:String, CodingKey {
         case hx_pStatusArr = "amountDetailList"
     }

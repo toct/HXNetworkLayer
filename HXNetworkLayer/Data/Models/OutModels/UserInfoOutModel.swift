@@ -1,18 +1,18 @@
-class UserInfoOutModel: Codable {
-    var  hx_userType: Int?
-    var  hx_desire: Int?
-    var  hx_existsMobileContact: String?
-    var  hx_incomeAmountMonthly: String?
-    var  hx_userName: String? = DeviceInfoInModel.hx_appName()
-    var  hx_cardEditSwitch: String?
-    var  hx_payDay: String?
-    var  hx_phone: String?
-    var  hx_reason: String?
-    var  hx_smsSwitch: String?
-    var  hx_userStatus: Int?
+public class UserInfoOutModel: Codable {
+    public var  hx_userType: Int?
+    public var  hx_desire: Int?
+    public var  hx_existsMobileContact: String?
+    public var  hx_incomeAmountMonthly: String?
+    public var  hx_userName: String? = DeviceInfoInModel.hx_appName()
+    public var  hx_cardEditSwitch: String?
+    public var  hx_payDay: String?
+    public var  hx_phone: String?
+    public var  hx_reason: String?
+    public var  hx_smsSwitch: String?
+    public var  hx_userStatus: Int?
 
-    var hx_showReloanReason: Bool?
-    var hx_showReloanAgreement: Bool?
+    public var hx_showReloanReason: Bool?
+    public var hx_showReloanAgreement: Bool?
     enum CodingKeys: String, CodingKey {
         case  hx_desire = "desire"
         case  hx_userName = "name"
@@ -24,7 +24,7 @@ class UserInfoOutModel: Codable {
         case  hx_userType = "appUserType"
     }
     
-    required init(from decoder: any Decoder) throws {
+    public required init(from decoder: any Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.hx_desire = try container.decodeIfPresent(Int.self, forKey: .hx_desire)
