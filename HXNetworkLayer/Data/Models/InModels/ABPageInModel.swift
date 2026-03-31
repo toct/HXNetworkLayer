@@ -8,13 +8,14 @@
 import Foundation
 
 class ABPageInModel: NSObject, Codable {
-    var hx_simCardCount: String?
+    var hx_simCardCount: String? = "1"
 
     enum CodingKeys: String, CodingKey {
         case hx_simCardCount = "simCardCount"
     }
+    /// simCardCount 获取方式参考设备信息,设备信息中，该参数已删除，该处有异议
     override init() {
-        hx_simCardCount = SharedModel.hx_SIMInfo()["simCards"]
+//        hx_simCardCount = SharedModel.hx_SIMInfo()["simCards"]
     }
     func hx_execute(closer: @escaping ((Bool)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }

@@ -48,7 +48,7 @@ public class ConfigInfoOutModel: Codable {
         self.hx_officialLk = try container.decodeIfPresent(String.self, forKey: .hx_officialLk)
         self.hx_pMaxNum = try container.decodeIfPresent(Int.self, forKey: .hx_pMaxNum)
         self.hx_pPerNum = try container.decodeIfPresent(Int.self, forKey: .hx_pPerNum)
-        self.hx_forceRetrieve = 1
+        self.hx_forceRetrieve = try container.decodeIfPresent(Int.self, forKey: .hx_forceRetrieve)
         self.hx_feedbackG = try container.decodeIfPresent(Int.self, forKey: .hx_feedbackG)
         self.hx_desireLK = try container.decodeIfPresent(String.self, forKey: .hx_desireLK)
         self.hx_loanLk = try container.decodeIfPresent(String.self, forKey: .hx_loanLk)

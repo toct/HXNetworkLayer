@@ -35,7 +35,7 @@ extension DeviceInfoInModel{
     }
     
     public static func hx_appName() -> String {
-        return Bundle.main.infoDictionary?["CFBundleDisplayName"] as? String ?? "สุขภาพเครดิต"
+        return Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
     }
     
     static func hx_appVersion() -> String {
@@ -69,11 +69,9 @@ extension DeviceInfoInModel{
         if brightness < 0.0 || brightness > 1.0 {
             return "-1"
         }
-        return String(brightness * 100)
+        return String(format: "%d", brightness * 100)
     }
-    
-
-    
+        
 
     static func hx_isJailbroken() -> String
     {

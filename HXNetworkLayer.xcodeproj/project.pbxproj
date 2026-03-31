@@ -114,6 +114,14 @@
 		4C74D9C32F56D8E800D770C4 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C22F56D8E800D770C4 /* Debouncer.swift */; };
 		4C74D9C52F56DA2E00D770C4 /* UIImage_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */; };
 		4C74D9C72F56DBB400D770C4 /* ViewSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */; };
+		4C8CA5AC2F77B236002518A2 /* MentationInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5AB2F77B236002518A2 /* MentationInModel.swift */; };
+		4C8CA5AE2F77B250002518A2 /* MentionsOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5AD2F77B250002518A2 /* MentionsOutModel.swift */; };
+		4C8CA5B02F77B255002518A2 /* MentionListOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5AF2F77B255002518A2 /* MentionListOutModel.swift */; };
+		4C8CA5B22F77B2A2002518A2 /* ProvinceInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5B12F77B2A2002518A2 /* ProvinceInModel.swift */; };
+		4C8CA5B42F77B2BB002518A2 /* AddressAssetsOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5B32F77B2BB002518A2 /* AddressAssetsOutModel.swift */; };
+		4C8CA5B62F77C9D3002518A2 /* CityInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5B52F77C9D3002518A2 /* CityInModel.swift */; };
+		4C8CA5B82F77CC6E002518A2 /* EwalletInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5B72F77CC6E002518A2 /* EwalletInModel.swift */; };
+		4C8CA5BA2F77CEDA002518A2 /* KycFourPeriodDataInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8CA5B92F77CEDA002518A2 /* KycFourPeriodDataInModel.swift */; };
 		4C9952C62F582EF3009C6DAD /* LocalContactObjC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9952C52F582EF3009C6DAD /* LocalContactObjC.m */; };
 		4C9952C72F582EF3009C6DAD /* LocalContactObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C9952C42F582EF3009C6DAD /* LocalContactObjC.h */; };
 		95FFDB9B7044B9BBE397B1B3 /* Pods_HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */; };
@@ -239,6 +247,14 @@
 		4C74D9C22F56D8E800D770C4 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage_Extension.swift; sourceTree = "<group>"; };
 		4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetting.swift; sourceTree = "<group>"; };
+		4C8CA5AB2F77B236002518A2 /* MentationInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentationInModel.swift; sourceTree = "<group>"; };
+		4C8CA5AD2F77B250002518A2 /* MentionsOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionsOutModel.swift; sourceTree = "<group>"; };
+		4C8CA5AF2F77B255002518A2 /* MentionListOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionListOutModel.swift; sourceTree = "<group>"; };
+		4C8CA5B12F77B2A2002518A2 /* ProvinceInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvinceInModel.swift; sourceTree = "<group>"; };
+		4C8CA5B32F77B2BB002518A2 /* AddressAssetsOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAssetsOutModel.swift; sourceTree = "<group>"; };
+		4C8CA5B52F77C9D3002518A2 /* CityInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInModel.swift; sourceTree = "<group>"; };
+		4C8CA5B72F77CC6E002518A2 /* EwalletInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EwalletInModel.swift; sourceTree = "<group>"; };
+		4C8CA5B92F77CEDA002518A2 /* KycFourPeriodDataInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KycFourPeriodDataInModel.swift; sourceTree = "<group>"; };
 		4C9952C42F582EF3009C6DAD /* LocalContactObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalContactObjC.h; sourceTree = "<group>"; };
 		4C9952C52F582EF3009C6DAD /* LocalContactObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalContactObjC.m; sourceTree = "<group>"; };
 		55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,14 +341,19 @@
 				4C74D9002F567E1C00D770C4 /* CardListInModel.swift */,
 				4C74D9012F567E1C00D770C4 /* CommitItemInModel.swift */,
 				4C74D9022F567E1C00D770C4 /* ContactInModel.swift */,
+				4C8CA5B52F77C9D3002518A2 /* CityInModel.swift */,
 				4C74D9032F567E1C00D770C4 /* DeviceInfoInModel.swift */,
 				4C74D9B62F5681C400D770C4 /* DeviceInfoInModel_extension.swift */,
 				4C74D9042F567E1C00D770C4 /* DocsInModel.swift */,
+				4C8CA5B92F77CEDA002518A2 /* KycFourPeriodDataInModel.swift */,
 				4C74D9052F567E1C00D770C4 /* DrawalDetailInMode.swift */,
 				4C74D9062F567E1C00D770C4 /* ExtensionPayInModel.swift */,
+				4C8CA5B72F77CC6E002518A2 /* EwalletInModel.swift */,
 				4C74D9072F567E1C00D770C4 /* FeedbackInModel.swift */,
+				4C8CA5AB2F77B236002518A2 /* MentationInModel.swift */,
 				4C74D9082F567E1C00D770C4 /* HtmlParamModel.swift */,
 				4C74D9092F567E1C00D770C4 /* ImageuploadInModel.swift */,
+				4C8CA5B12F77B2A2002518A2 /* ProvinceInModel.swift */,
 				4C74D90A2F567E1C00D770C4 /* KycDataCommitInModel.swift */,
 				4C74D90B2F567E1C00D770C4 /* KycItemCommitInModel.swift */,
 				4C74D90C2F567E1C00D770C4 /* KycLivenessCommitInModel.swift */,
@@ -365,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				4C74D9232F567E1C00D770C4 /* ABPageOutModel.swift */,
+				4C8CA5B32F77B2BB002518A2 /* AddressAssetsOutModel.swift */,
 				4C74D9242F567E1C00D770C4 /* AmountOutModel.swift */,
 				4C74D9252F567E1C00D770C4 /* ApplyResultOutModel.swift */,
 				4C74D9262F567E1C00D770C4 /* CardDetailOutModel.swift */,
@@ -376,6 +398,8 @@
 				4C74D92C2F567E1C00D770C4 /* FormCellOutModel.swift */,
 				4C74D92D2F567E1C00D770C4 /* HomeDataOutModel.swift */,
 				4C74D92E2F567E1C00D770C4 /* KYCItemUploadOutModel.swift */,
+				4C8CA5AF2F77B255002518A2 /* MentionListOutModel.swift */,
+				4C8CA5AD2F77B250002518A2 /* MentionsOutModel.swift */,
 				4C74D92F2F567E1C00D770C4 /* KycPeriodOutModel.swift */,
 				4C74D9302F567E1C00D770C4 /* KYCSOutModel.swift */,
 				4C74D9312F567E1C00D770C4 /* LoginOutModel.swift */,
@@ -603,9 +627,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -688,6 +716,7 @@
 				4C74D9642F567E1C00D770C4 /* DrawalDetailInMode.swift in Sources */,
 				4C74D9652F567E1C00D770C4 /* ExtensionPayInModel.swift in Sources */,
 				4C74D9662F567E1C00D770C4 /* FeedbackInModel.swift in Sources */,
+				4C8CA5BA2F77CEDA002518A2 /* KycFourPeriodDataInModel.swift in Sources */,
 				4C74D9672F567E1C00D770C4 /* HtmlParamModel.swift in Sources */,
 				4C74D9682F567E1C00D770C4 /* ImageuploadInModel.swift in Sources */,
 				4C74D9692F567E1C00D770C4 /* KycDataCommitInModel.swift in Sources */,
@@ -704,6 +733,7 @@
 				4C74D9742F567E1C00D770C4 /* ProductApplyInModel.swift in Sources */,
 				4C74D9752F567E1C00D770C4 /* ProductDIsplayInquireInModel.swift in Sources */,
 				4C74D9762F567E1C00D770C4 /* ProductListOutInModel.swift in Sources */,
+				4C8CA5B42F77B2BB002518A2 /* AddressAssetsOutModel.swift in Sources */,
 				4C74D9B72F5681C400D770C4 /* DeviceInfoInModel_extension.swift in Sources */,
 				4C74D9772F567E1C00D770C4 /* ProductMoreDetailsInModel.swift in Sources */,
 				4C74D9782F567E1C00D770C4 /* ProductStateInModel.swift in Sources */,
@@ -717,12 +747,15 @@
 				4C74D9B12F567E3700D770C4 /* NetworkTool.swift in Sources */,
 				4C74D9B22F567E3700D770C4 /* ImageDownloadTool.swift in Sources */,
 				4C74D9B32F567E3700D770C4 /* SwitchHostAddress.swift in Sources */,
+				4C8CA5B62F77C9D3002518A2 /* CityInModel.swift in Sources */,
 				4C74D9C12F56882E00D770C4 /* LoadingIndicator.swift in Sources */,
 				4C74D97F2F567E1C00D770C4 /* VersionInModel.swift in Sources */,
 				4C74D9802F567E1C00D770C4 /* WithDrawInModel.swift in Sources */,
 				4C74D9812F567E1C00D770C4 /* ABPageOutModel.swift in Sources */,
 				4C74D9822F567E1C00D770C4 /* AmountOutModel.swift in Sources */,
+				4C8CA5AC2F77B236002518A2 /* MentationInModel.swift in Sources */,
 				4C74D9832F567E1C00D770C4 /* ApplyResultOutModel.swift in Sources */,
+				4C8CA5AE2F77B250002518A2 /* MentionsOutModel.swift in Sources */,
 				4C74D9842F567E1C00D770C4 /* CardDetailOutModel.swift in Sources */,
 				4C74D9852F567E1C00D770C4 /* CardInfoOutModel.swift in Sources */,
 				4C74D9862F567E1C00D770C4 /* CardsOutModel.swift in Sources */,
@@ -744,6 +777,8 @@
 				4C74D9952F567E1C00D770C4 /* PayOutModel.swift in Sources */,
 				4C74D9BB2F56846A00D770C4 /* CardViewOutModel.swift in Sources */,
 				4C74D9972F567E1C00D770C4 /* ProductDetailOutModel.swift in Sources */,
+				4C8CA5B02F77B255002518A2 /* MentionListOutModel.swift in Sources */,
+				4C8CA5B82F77CC6E002518A2 /* EwalletInModel.swift in Sources */,
 				4C74D9C72F56DBB400D770C4 /* ViewSetting.swift in Sources */,
 				4C74D9C52F56DA2E00D770C4 /* UIImage_Extension.swift in Sources */,
 				4C74D9982F567E1C00D770C4 /* ProductLabelOutModel.swift in Sources */,
@@ -762,6 +797,7 @@
 				4C74D9A42F567E1C00D770C4 /* SharedModel.swift in Sources */,
 				4C74D9A52F567E1C00D770C4 /* LocalizationData.swift in Sources */,
 				4C74D9A62F567E1C00D770C4 /* HXNetworkLayer.docc in Sources */,
+				4C8CA5B22F77B2A2002518A2 /* ProvinceInModel.swift in Sources */,
 				4C74D9A72F567E1C00D770C4 /* HXNetworkLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

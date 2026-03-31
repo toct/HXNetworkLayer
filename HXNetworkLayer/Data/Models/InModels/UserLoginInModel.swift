@@ -30,10 +30,8 @@ public class UserLoginInModel: NSObject, Codable {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {
                     let hx_data = JsonKit.hx_jsonToModel(hx_dict, modelType: LoginOutModel.self)
                     LocalizationData.shared.hx_tmpLoginData = hx_data
+                    closer(success)
                 }
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
-                closer(success)
             }
         }).request()
     }

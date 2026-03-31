@@ -11,19 +11,6 @@ public class ApplyResultOutModel: Codable {
         case  hx_orderId = "orderId"
     }
     
-    static func hx_deviceType()-> String{
-        let hx_name = hx_deviceCategoryName()
-        if hx_name.hasPrefix("iPhone") {
-            return "3"
-        } else if hx_name.hasPrefix("iPad"){
-            return "2"
-        } else if hx_name.hasPrefix("iMac") || hx_name.hasPrefix("Mac") {
-            return "1"
-        }else{
-            return "0"
-        }
-    }
-    
     static func hx_deviceTypeString()->String{
         let hx_name = hx_deviceCategoryName()
         if hx_name.hasPrefix("iPhone") {

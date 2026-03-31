@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "HXNetworkLayer"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.6"
   spec.summary      = "iOS networking layer with chain-style HTTP client, JSON/multipart support, image download and host switching."
 
   # This description is used to generate tags and improve search results.
@@ -108,12 +108,14 @@ Pod::Spec.new do |spec|
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
-  # spec.frameworks = "SomeFramework", "AnotherFramework"
+  # spec.framework  = "StoreKit"
+  spec.frameworks = "StoreKit", "WebKit", "AppTrackingTransparency", "AdServices", "AdSupport"
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
 
+  # spec.weak_frameworks = 'Twitter'
+  # spec.weak_frameworks = "StoreKit", "WebKit", "AppTrackingTransparency", "AdServices", "AdSupport"
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

@@ -28,7 +28,7 @@ public class ProductOverOutModel: Codable {
         let uptime = CLongLong(hx_getUptimeWithResting())!
         let interval = Double(uptime) / 1000.0
         let date = NSDate(timeIntervalSinceNow: (0-interval))
-        return String(date.timeIntervalSince1970 * 1000)
+        return String(format: "%d", date.timeIntervalSince1970 * 1000)
     }
     
 }

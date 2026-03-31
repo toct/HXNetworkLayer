@@ -25,26 +25,27 @@ public class DocsInModel: Codable {
     }
     
     public func text(_ key: String) -> String {
-        
-        if let hx_text = SharedModel.shared.hx_constactValue?[key] as? String, !hx_text.isEmpty {
-            return hx_text
-        }
-    
         if hx_doc.isEmpty {
-            hx_execute { [self] hx_dict in
-                if !hx_dict.isEmpty {
-                    hx_doc = hx_dict
-                    // 保存到本地
-                    if let hx_data = try? JSONSerialization.data(withJSONObject: hx_dict) {
-                        try? hx_data.write(to: DocsInModel.hx_url)
+            SharedModel.shared.hx_debounce.debounce {
+                self.hx_execute { [self] hx_dict in
+                    if !hx_dict.isEmpty {
+                        hx_doc = hx_dict
+                        // 保存到本地
+                        if let hx_data = try? JSONSerialization.data(withJSONObject: hx_dict) {
+                            try? hx_data.write(to: DocsInModel.hx_url)
+                        }
                     }
                 }
             }
         }
-                
         if let dict = hx_doc[key] as? [String: String] {
             return dict["en"] ?? key
         }
+        
+        if let hx_text = SharedModel.shared.hx_constactValue?[key] as? String, !hx_text.isEmpty {
+            return hx_text
+        }
+        
         return key
     }
     

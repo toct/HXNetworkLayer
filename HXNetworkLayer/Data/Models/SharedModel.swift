@@ -55,7 +55,7 @@ public class SharedModel: NSObject
 
     public lazy var hx_constactValue: [String:Any]? = {
         do {
-            let hx_name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
+            let hx_name = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
             guard let hx_url = Bundle.main.url(forResource: hx_name, withExtension: "data") else { return nil}
             let hx_data = try Data(contentsOf: hx_url)
             let hx_keyData = Data(hx_secretKey.utf8)
@@ -74,22 +74,7 @@ public class SharedModel: NSObject
     public func hx_isForceUpdate() -> Bool {
         return hx_updateData?.hx_type == .hx_forceUpdate
     }
-    
-    public static func hx_SIMInfo() -> [String: String] {
-        let info = CTTelephonyNetworkInfo().serviceSubscriberCellularProviders
-        let values = info?.values.map { $0.carrierName } ?? []
         
-        let dict = Dictionary(uniqueKeysWithValues: values.enumerated().map { ($0.offset, $0.element) })
-        let hx_card1Network = dict[0] ?? "--"
-        let hx_card2Network = dict[1] ?? "--"
-        let simCount = values.filter({ $0 != "--" })
-
-        return ["slots": String(info?.count ?? 0),
-                "simCards": String(simCount.count),
-                "sim1": hx_card1Network!,
-                "sim2": hx_card2Network!]
-    }
-    
     public static func hx_submitAdid() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
             Adjust.adid { adidStr in

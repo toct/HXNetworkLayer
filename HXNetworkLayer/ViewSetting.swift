@@ -41,8 +41,9 @@ public class ViewSetting: ObservableObject {
         hx_appearance.backgroundColor = .clear
         UINavigationBar.appearance().standardAppearance = hx_appearance
         UINavigationBar.appearance().scrollEdgeAppearance = hx_appearance
-        UITableView.appearance().backgroundColor = .red
-        UITableViewCell.appearance().backgroundColor = .red
+// 如此设置，iOS16以下系统的通讯录选择，会触发两次，这里有疑问
+//        UITableView.appearance().backgroundColor = .red
+//        UITableViewCell.appearance().backgroundColor = .red
         UITableView.appearance().tableFooterView = UIView()
         UITabBar.appearance().isHidden = true // 彻底隐藏系统TabBar
     }

@@ -4,6 +4,10 @@
 //
 //  Created by mc on 3/3/26.
 //
+public enum FormType {
+    case kyc
+    case bankCardModify
+}
 
 public enum CheckType {
     case authorization
@@ -81,3 +85,6 @@ extension String {
         return hx_formatter.string(from: number) ?? ""
     }
 }
+
+let hx_contryId = "63"
+

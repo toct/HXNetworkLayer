@@ -22,9 +22,12 @@ class RootOutModel: Codable {
     func hx_setupProperties() {
         if let code = hx_resultCode {
             switch code {
-            case 200, 6201144:
+            case 200, 1000000, 6201144, 6202001, 6202004, 6230002, 6230003, 6230004:
                 break
             case 2000001, 2000002, 2002001:
+                if code == 2000002 {
+                    LoadingIndicator.hx_show(hx_resultMsg ?? "")
+                }
                 if  LocalizationData.shared.hx_loginData.isLogin() {
                     SharedModel.shared.hx_debounce.debounce {
                         LoadingIndicator.hx_show(hx_commonDoc(String(code)))
@@ -35,8 +38,6 @@ class RootOutModel: Codable {
                 SharedModel.shared.hx_debounce.debounce {
                     ViewSetting.shared.hx_updateType = "force"
                 }
-            case 1000000, 6202001, 6202004, 6230002, 6230003, 6230004:
-                break
             default:
                 LoadingIndicator.hx_show(hx_resultMsg ?? "")
             }
