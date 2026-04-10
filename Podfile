@@ -7,10 +7,14 @@ target 'HXNetworkLayer' do
 
   # Pods for HXNetworkLayer
   pod 'Adjust', '~> 5.0.1'
-
+  pod 'FirebaseCore', '~> 12.10.0'
+  pod 'FirebaseMessaging', '~> 12.10.0'
+  
   target 'HXNetworkLayerTests' do
     # Pods for testing
      pod 'Adjust', '~> 5.0.1'
+     pod 'FirebaseCore', '~> 12.10.0'
+     pod 'FirebaseMessaging', '~> 12.10.0'
 
   end
 

@@ -3,9 +3,11 @@ import Foundation
 public class UserInfoInModel: NSObject, Codable {
     public var hx_adid: String?
     public var hx_smsSwitch: String?
+    var hx_googleToken: String?
     enum CodingKeys: String, CodingKey {
         case hx_adid = "adid"
         case hx_smsSwitch = "smsSwitch"
+        case hx_googleToken = "googleToken"
     }
         
     public func hx_execute(showHub: Bool = true, closer: @escaping ((UserInfoOutModel?)->())) {

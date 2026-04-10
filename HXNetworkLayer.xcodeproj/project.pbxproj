@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2BFEEE2F890C5000AD077E /* PushAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */; };
+		4C2BFEF02F890E6100AD077E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */; };
 		4C74D6A32F567A4C00D770C4 /* HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */; };
 		4C74D8E82F567DBF00D770C4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E62F567DBE00D770C4 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C74D8E92F567DBF00D770C4 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E72F567DBF00D770C4 /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -139,6 +141,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAppDelegate.swift; sourceTree = "<group>"; };
+		4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D6A22F567A4C00D770C4 /* HXNetworkLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HXNetworkLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D8E62F567DBE00D770C4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -457,6 +461,8 @@
 				4C74D94C2F567E1C00D770C4 /* HXNetworkLayer.swift */,
 				4C74D9C22F56D8E800D770C4 /* Debouncer.swift */,
 				4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */,
+				4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */,
+				4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */,
 				4C74D9C02F56882E00D770C4 /* LoadingIndicator.swift */,
 				4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */,
 				4C74D8F02F567E1C00D770C4 /* HXNetworkLayerConstant.swift */,
@@ -606,6 +612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2BFEF02F890E6100AD077E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,13 +634,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -784,6 +787,7 @@
 				4C74D9982F567E1C00D770C4 /* ProductLabelOutModel.swift in Sources */,
 				4C74D9992F567E1C00D770C4 /* ProductListOutModel.swift in Sources */,
 				4C74D99A2F567E1C00D770C4 /* ProductOutModel.swift in Sources */,
+				4C2BFEEE2F890C5000AD077E /* PushAppDelegate.swift in Sources */,
 				4C74D99B2F567E1C00D770C4 /* ProductOverOutModel.swift in Sources */,
 				4C74D99C2F567E1C00D770C4 /* ProductStatusOutModel.swift in Sources */,
 				4C74D99D2F567E1C00D770C4 /* RootOutModel.swift in Sources */,
