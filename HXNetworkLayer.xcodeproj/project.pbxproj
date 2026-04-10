@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4C2BFEEE2F890C5000AD077E /* PushAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */; };
-		4C2BFEF02F890E6100AD077E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */; };
+		4C2BFEF72F89106F00AD077E /* 证书push.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF52F89106F00AD077E /* 证书push.p12 */; };
+		4C2BFEF82F89106F00AD077E /* bundleId.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF12F89106F00AD077E /* bundleId.rtf */; };
+		4C2BFEF92F89106F00AD077E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF22F89106F00AD077E /* GoogleService-Info.plist */; };
+		4C2BFEFA2F89106F00AD077E /* 证书.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF42F89106F00AD077E /* 证书.p12 */; };
+		4C2BFEFB2F89106F00AD077E /* yanwenbopush.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF32F89106F00AD077E /* yanwenbopush.mobileprovision */; };
 		4C74D6A32F567A4C00D770C4 /* HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */; };
 		4C74D8E82F567DBF00D770C4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E62F567DBE00D770C4 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C74D8E92F567DBF00D770C4 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E72F567DBF00D770C4 /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -142,7 +146,11 @@
 
 /* Begin PBXFileReference section */
 		4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAppDelegate.swift; sourceTree = "<group>"; };
-		4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C2BFEF12F89106F00AD077E /* bundleId.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = bundleId.rtf; sourceTree = "<group>"; };
+		4C2BFEF22F89106F00AD077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C2BFEF32F89106F00AD077E /* yanwenbopush.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = yanwenbopush.mobileprovision; sourceTree = "<group>"; };
+		4C2BFEF42F89106F00AD077E /* 证书.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "证书.p12"; sourceTree = "<group>"; };
+		4C2BFEF52F89106F00AD077E /* 证书push.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "证书push.p12"; sourceTree = "<group>"; };
 		4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D6A22F567A4C00D770C4 /* HXNetworkLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HXNetworkLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D8E62F567DBE00D770C4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -294,6 +302,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2BFEF62F89106F00AD077E /* yanwenbo-推送证书 */ = {
+			isa = PBXGroup;
+			children = (
+				4C2BFEF12F89106F00AD077E /* bundleId.rtf */,
+				4C2BFEF22F89106F00AD077E /* GoogleService-Info.plist */,
+				4C2BFEF32F89106F00AD077E /* yanwenbopush.mobileprovision */,
+				4C2BFEF42F89106F00AD077E /* 证书.p12 */,
+				4C2BFEF52F89106F00AD077E /* 证书push.p12 */,
+			);
+			path = "yanwenbo-推送证书";
+			sourceTree = "<group>";
+		};
 		4C74D68D2F567A4C00D770C4 = {
 			isa = PBXGroup;
 			children = (
@@ -461,7 +481,7 @@
 				4C74D94C2F567E1C00D770C4 /* HXNetworkLayer.swift */,
 				4C74D9C22F56D8E800D770C4 /* Debouncer.swift */,
 				4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */,
-				4C2BFEEF2F890E6100AD077E /* GoogleService-Info.plist */,
+				4C2BFEF62F89106F00AD077E /* yanwenbo-推送证书 */,
 				4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */,
 				4C74D9C02F56882E00D770C4 /* LoadingIndicator.swift */,
 				4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */,
@@ -612,7 +632,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C2BFEF02F890E6100AD077E /* GoogleService-Info.plist in Resources */,
+				4C2BFEF72F89106F00AD077E /* 证书push.p12 in Resources */,
+				4C2BFEF82F89106F00AD077E /* bundleId.rtf in Resources */,
+				4C2BFEF92F89106F00AD077E /* GoogleService-Info.plist in Resources */,
+				4C2BFEFA2F89106F00AD077E /* 证书.p12 in Resources */,
+				4C2BFEFB2F89106F00AD077E /* yanwenbopush.mobileprovision in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,9 +658,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
