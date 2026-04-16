@@ -12,10 +12,6 @@ target 'HXNetworkLayer' do
   
   target 'HXNetworkLayerTests' do
     # Pods for testing
-     pod 'Adjust', '~> 5.0.1'
-     pod 'FirebaseCore', '~> 12.10.0'
-     pod 'FirebaseMessaging', '~> 12.10.0'
-
   end
 
 end
