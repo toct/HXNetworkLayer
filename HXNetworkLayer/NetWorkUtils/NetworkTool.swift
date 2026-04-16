@@ -187,7 +187,7 @@ extension NetworkTool {
         }
 
         if hx_showHub {
-            LoadingIndicator.hx_show(showIndicator: true, timeout: nil)
+            LoadingIndicator.hx_show(showIndicator: true)
         }
 
         let urlStr = hx_urlString
