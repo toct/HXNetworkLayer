@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import UIKit
 
-public class ImageDownloadTool {
+class ImageDownloadTool {
     static let shared = ImageDownloadTool()
-    public static func hx_image(from url: String?, _ completion: @escaping (UIImage?) -> Void) {
+    static func hx_image(from url: String?, _ completion: @escaping (UIImage?) -> Void) {
         guard let hx_url = url else {
             completion(nil)
             return

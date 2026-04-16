@@ -127,5 +127,8 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "Adjust", "~> 5.0.1"
+  spec.dependency "FirebaseCore", "~> 12.10.0"
+  spec.dependency "FirebaseMessaging", "~> 12.10.0"
+
 
 end

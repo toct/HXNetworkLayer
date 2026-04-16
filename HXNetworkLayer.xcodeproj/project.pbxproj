@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2B012E2F90E89400AD077E /* NetworkToolQueueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2B012D2F90E89400AD077E /* NetworkToolQueueManager.swift */; };
 		4C2BFEEE2F890C5000AD077E /* PushAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */; };
 		4C2BFEF72F89106F00AD077E /* 证书push.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF52F89106F00AD077E /* 证书push.p12 */; };
 		4C2BFEF82F89106F00AD077E /* bundleId.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF12F89106F00AD077E /* bundleId.rtf */; };
@@ -145,6 +146,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2B012D2F90E89400AD077E /* NetworkToolQueueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToolQueueManager.swift; sourceTree = "<group>"; };
 		4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAppDelegate.swift; sourceTree = "<group>"; };
 		4C2BFEF12F89106F00AD077E /* bundleId.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = bundleId.rtf; sourceTree = "<group>"; };
 		4C2BFEF22F89106F00AD077E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		4C74D9AF2F567E3700D770C4 /* NetWorkUtils */ = {
 			isa = PBXGroup;
 			children = (
+				4C2B012D2F90E89400AD077E /* NetworkToolQueueManager.swift */,
 				4C74D9AB2F567E3700D770C4 /* ImageDownloadTool.swift */,
 				4C74D9AC2F567E3700D770C4 /* NetworkTool.swift */,
 				4C74D9AD2F567E3700D770C4 /* RequestURLConstant.swift */,
@@ -772,6 +775,7 @@
 				4C74D97A2F567E1C00D770C4 /* SendVerifyNumberInModel.swift in Sources */,
 				4C74D97B2F567E1C00D770C4 /* UploadDeviceInfoInModel.swift in Sources */,
 				4C74D97C2F567E1C00D770C4 /* UploadMobileContactInModel.swift in Sources */,
+				4C2B012E2F90E89400AD077E /* NetworkToolQueueManager.swift in Sources */,
 				4C74D97D2F567E1C00D770C4 /* UserInfoInModel.swift in Sources */,
 				4C74D97E2F567E1C00D770C4 /* UserLoginInModel.swift in Sources */,
 				4C74D9B02F567E3700D770C4 /* RequestURLConstant.swift in Sources */,

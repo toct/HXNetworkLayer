@@ -73,3 +73,6 @@ public func hx_commonDoc(_ key: String, _ holder: String = "") -> String {
     hx_text = hx_text.replacingOccurrences(of: "KT_CONTACTNO", with: holder)
     return hx_text
 }
+func hx_localDoc(_ key: String, _ holder: String = "") -> String {
+    SharedModel.shared.hx_constactValue?[key] as? String ?? ""
+}

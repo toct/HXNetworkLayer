@@ -51,7 +51,6 @@ let hx_bingCard_url = "/app/v3/payAccountInfo/payAccountItemList"
 let hx_addCard_url = "/app/v3/payAccountInfo/save"
 let hx_updateCard_url = "/app/v3/payAccountInfo/update"
 let hx_kycStatus_url = "/app/v3/kyc/four/status"
-
 let hx_mentation_url = "/app/v3/mentation/findmentation"
 let hx_province = "/app/v3/sys/province"
 let hx_city = "/app/v3/sys/city"

@@ -20,9 +20,9 @@ public final class LoadingIndicator {
 
     /// 在 keyWindow 上显示加载指示器。
     /// - Parameters:
-    ///   - label: 文案，传 nil 或空字符串时只显示 UIActivityIndicatorView（仅指示器时 1.5 秒后自动隐藏，也可主动 hide）。
+    ///   - label: 文案，传 nil 或空字符串时只显示 UIActivityIndicatorView（仅文案时 1.5 秒后自动隐藏，也可主动 hide）。
     ///   - showIndicator: true 表示指示器显示，false 代表指示器隐藏
-    public static func hx_show(_ message: String? = nil, isKYC:Bool = false, showIndicator: Bool = false) {
+    public static func hx_show(_ message: String? = nil, showIndicator: Bool = false, isKYC:Bool = false) {
         shared.hx_show(message, showIndicator: showIndicator)
         if let text = message, !text.isEmpty && isKYC {
             hx_uploadBuryPoint("29", remark1: text)
@@ -64,18 +64,14 @@ public final class LoadingIndicator {
     // MARK: - 内部
 
     private func keyWindow() -> UIWindow? {
-        if #available(iOS 13.0, *) {
-            guard let scene = UIApplication.shared.connectedScenes
-                .compactMap({ $0 as? UIWindowScene })
-                .first(where: { $0.activationState == .foregroundActive }),
-                  let window = scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first
-            else {
-                return nil
-            }
-            return window
-        } else {
-            return UIApplication.shared.keyWindow
+        guard let scene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .first(where: { $0.activationState == .foregroundActive }),
+              let window = scene.windows.first(where: { $0.isKeyWindow }) ?? scene.windows.first
+        else {
+            return nil
         }
+        return window
     }
 
     private func makeOverlayWindow(with parent: UIWindow) -> UIWindow {
