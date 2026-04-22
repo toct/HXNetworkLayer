@@ -8,19 +8,33 @@
 import Foundation
 
 public class CardAddInModel:NSObject, Codable {
-    public var hx_defaultFlag: String
-    public var hx_recordId: String?
-    public var hx_kycCommitItemList: [CommitItemInModel]?
+    var hx_defaultFlag: String?
+    var hx_recordId: String?
+    var hx_kycCommitItemList: [CommitItemInModel]?
     enum CodingKeys: String, CodingKey {
         case hx_defaultFlag = "defaultFlag"
         case hx_kycCommitItemList = "kycCommitItemList"
         case hx_recordId = "recordId"
     }
     
-    public init(data:[FormCellOutModel]? = nil, flag: String, recordId: String? = nil) {
+    public init(data:[FormCellOutModel]? = nil, flag: String = "0", recordId: String? = nil) {
         var hx_models: [CommitItemInModel] = []
         
-        if let hx_datas = data {
+        hx_defaultFlag = flag
+        hx_recordId = recordId
+        
+        if var hx_datas = data {
+            
+            if let index = hx_datas.firstIndex(where: { $0.hx_opionsCode == "hxdefaultFlag" }) {
+                let hx_model = hx_datas.remove(at: index)
+                hx_defaultFlag = hx_model.hx_optValue ?? flag
+            }
+            
+            if let index = hx_datas.firstIndex(where: { $0.hx_opionsCode == "hxrecordId" }) {
+                let hx_model = hx_datas.remove(at: index)
+                hx_recordId = hx_model.hx_optValue ?? recordId
+            }
+            
             for model in hx_datas {
                 let hx_model = CommitItemInModel()
                 hx_model.hx_itemValueType = model.hx_optType
@@ -33,8 +47,6 @@ public class CardAddInModel:NSObject, Codable {
             }
         }
         hx_kycCommitItemList = hx_models
-        hx_defaultFlag = flag
-        hx_recordId = recordId
     }
     
     public func hx_execute(closer: @escaping (([FormCellOutModel]?)->())) {

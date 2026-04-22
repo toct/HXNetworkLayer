@@ -1,8 +1,8 @@
 import Foundation
 
-class EwalletInModel: NSObject, Codable {
+public class EwalletInModel: NSObject, Codable {
     
-    func hx_execute(hx_backType: String, _ closer: @escaping (([OptionOutModel]?)->())) {
+    public func hx_execute(hx_backType: String, _ closer: @escaping (([OptionOutModel]?)->())) {
         let hx_url = hx_backType == "E-wallet" ? hx_ewallet : hx_bank
         
         NetworkTool().url(hx_url).params().callback{ code, success, data in

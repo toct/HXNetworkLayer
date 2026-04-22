@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "HXNetworkLayer"
-  spec.version      = "0.0.9"
+  spec.version      = "0.1"
   spec.summary      = "iOS networking layer with chain-style HTTP client, JSON/multipart support, image download and host switching."
 
   # This description is used to generate tags and improve search results.

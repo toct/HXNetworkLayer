@@ -16,7 +16,8 @@ public class LocalizationData: ObservableObject, Codable {
     @Published public var hx_firstLunach: Bool = true
     @Published public var hx_praise: Bool = false
     @Published public var hx_abTag: String? = "1" // 默认显示B
-    
+    @Published public var hx_appAccess: Bool = false
+
     public var hx_tmpLoginData: LoginOutModel?
     
     public static let shared = LocalizationData()
@@ -114,6 +115,7 @@ public class LocalizationData: ObservableObject, Codable {
         
         guard FileManager.default.fileExists(atPath: Self.hx_saveURL.path) else {
 //            print("ℹ️ 无保存数据，使用默认值")
+            self.hx_appAccess = true
             return
         }
         
@@ -158,6 +160,7 @@ public class LocalizationData: ObservableObject, Codable {
 //                      }
 //                  }
             }
+            self.hx_appAccess = true
         }
     }
 }

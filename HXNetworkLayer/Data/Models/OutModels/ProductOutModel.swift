@@ -48,14 +48,14 @@ public class ProductOutModel: Codable, Equatable {
     }
     
     func hx_setupProperties(){
-        if let hx_lowA = hx_lowAmount?.hx_numberFormat() {
-            if let hx_heighA = hx_highAmount?.hx_numberFormat() {
+        if let hx_lowA = hx_lowAmount?.hx_formatNumber() {
+            if let hx_heighA = hx_highAmount?.hx_formatNumber() {
                 hx_showAmo = "฿" + hx_lowA + " ~ B" + hx_heighA
             }else{
                 hx_showAmo = "฿" + hx_lowA
             }
         }else{
-            if let hx_heighA = hx_highAmount?.hx_numberFormat()  {
+            if let hx_heighA = hx_highAmount?.hx_formatNumber()  {
                 hx_showAmo = "฿" + hx_heighA
             }
         }

@@ -14,6 +14,7 @@
 		4C2BFEF92F89106F00AD077E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF22F89106F00AD077E /* GoogleService-Info.plist */; };
 		4C2BFEFA2F89106F00AD077E /* 证书.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF42F89106F00AD077E /* 证书.p12 */; };
 		4C2BFEFB2F89106F00AD077E /* yanwenbopush.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 4C2BFEF32F89106F00AD077E /* yanwenbopush.mobileprovision */; };
+		4C5D9ECC2F98C340001B90F0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5D9ECB2F98C340001B90F0 /* StringExtension.swift */; };
 		4C74D6A32F567A4C00D770C4 /* HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */; };
 		4C74D8E82F567DBF00D770C4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E62F567DBE00D770C4 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C74D8E92F567DBF00D770C4 /* AdServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C74D8E72F567DBF00D770C4 /* AdServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -153,6 +154,7 @@
 		4C2BFEF32F89106F00AD077E /* yanwenbopush.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = yanwenbopush.mobileprovision; sourceTree = "<group>"; };
 		4C2BFEF42F89106F00AD077E /* 证书.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "证书.p12"; sourceTree = "<group>"; };
 		4C2BFEF52F89106F00AD077E /* 证书push.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "证书push.p12"; sourceTree = "<group>"; };
+		4C5D9ECB2F98C340001B90F0 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4C74D6972F567A4C00D770C4 /* HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D6A22F567A4C00D770C4 /* HXNetworkLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HXNetworkLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C74D8E62F567DBE00D770C4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -486,6 +488,7 @@
 				4C2BFEF62F89106F00AD077E /* yanwenbo-推送证书 */,
 				4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */,
 				4C74D9C02F56882E00D770C4 /* LoadingIndicator.swift */,
+				4C5D9ECB2F98C340001B90F0 /* StringExtension.swift */,
 				4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */,
 				4C74D8F02F567E1C00D770C4 /* HXNetworkLayerConstant.swift */,
 				4C74D9B42F567E6A00D770C4 /* HXNetworkLayer-Bridge-header.h */,
@@ -802,6 +805,7 @@
 				4C74D98C2F567E1C00D770C4 /* KYCItemUploadOutModel.swift in Sources */,
 				4C74D9BD2F56882E00D770C4 /* JsonKit.swift in Sources */,
 				4C74D98D2F567E1C00D770C4 /* KycPeriodOutModel.swift in Sources */,
+				4C5D9ECC2F98C340001B90F0 /* StringExtension.swift in Sources */,
 				4C74D98E2F567E1C00D770C4 /* KYCSOutModel.swift in Sources */,
 				4C74D98F2F567E1C00D770C4 /* LoginOutModel.swift in Sources */,
 				4C74D9902F567E1C00D770C4 /* OptionOutModel.swift in Sources */,

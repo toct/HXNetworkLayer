@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ImageDownloadTool {
+public class ImageDownloadTool {
     static let shared = ImageDownloadTool()
-    static func hx_image(from url: String?, _ completion: @escaping (UIImage?) -> Void) {
+    static public func hx_image(from url: String?, _ completion: @escaping (UIImage?) -> Void) {
         guard let hx_url = url else {
             completion(nil)
             return

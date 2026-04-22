@@ -1,14 +1,14 @@
 import Foundation
 
-class KycFourPeriodDataInModel: NSObject, Codable {
-    var hx_kycId: String?
-    var hx_type: FormType = .kyc
+public class KycFourPeriodDataInModel: NSObject, Codable {
+    public var hx_kycId: String?
+    public var hx_type: FormType = .kyc
     private var hx_callback: (([FormCellOutModel]?)->())?
     enum CodingKeys: String, CodingKey {
         case hx_kycId = "kycId"
     }
     
-    func hx_execute(closer: @escaping (([FormCellOutModel]?)->())) {
+    public func hx_execute(closer: @escaping (([FormCellOutModel]?)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         hx_callback = { data in
             let hx_tmpData = data?.sorted { $0.hx_opionsSort < $1.hx_opionsSort }

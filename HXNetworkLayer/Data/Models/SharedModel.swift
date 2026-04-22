@@ -9,7 +9,7 @@ public class SharedModel: NSObject
 {
     private let hx_monitor = NWPathMonitor()
 
-    public let hx_debounce = Debouncer(delay: 0.5)
+    public let hx_debounce = Debouncer()
 
     public static let shared = SharedModel()
             

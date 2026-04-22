@@ -22,6 +22,7 @@ public class ViewSetting: ObservableObject {
     @Published public var hx_updateClose:Bool = false
     @Published public var hx_praiseCheck:Bool = false
     @Published public var hx_seviceBtnHidden = false
+    @Published public var hx_appPush = false
     @Published public var hx_updateOrder = false
     @Published public var hx_root = false
     public var hx_normalUpdateShowed = false
@@ -58,6 +59,32 @@ public class ViewSetting: ObservableObject {
         hx_runkyc = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.hx_runkyc = false
+        }
+    }
+    
+    public func hx_checkWeatherShowPushToday() {
+        @UIApplicationDelegateAdaptor(PushAppDelegate.self) var delegate
+        delegate.hx_checkAuth { granted in
+            if !granted {
+                let lastShownTimestamp = UserDefaults.standard.double(forKey: "pushAlert")
+                let lastShownDate = Date(timeIntervalSince1970: lastShownTimestamp)
+                
+                // 比较是否同一天
+                let calendar = Calendar.current
+                let today = Date()
+                
+                if calendar.isDate(lastShownDate, inSameDayAs: today) {
+                    self.hx_appPush = false
+                } else {
+                    // 保存当前时间戳
+                    if lastShownTimestamp != 0 { //lastShownTimestamp == 0时，说明第一次获取网络权限失败，此时已经有系统弹框了，不再弹二次弹框
+                        self.hx_appPush = true
+                    }
+                    UserDefaults.standard.set(today.timeIntervalSince1970, forKey: "pushAlert")
+                }
+            } else {
+                delegate.hx_uploadGoogleToken()
+            }
         }
     }
 }

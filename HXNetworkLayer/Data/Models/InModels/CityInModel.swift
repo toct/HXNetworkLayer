@@ -1,15 +1,15 @@
 import Foundation
 
-class CityInModel: NSObject, Codable {
+public class CityInModel: NSObject, Codable {
     var hx_countryId: String = hx_contryId
-    var hx_provinceId: String?
+    public var hx_provinceId: String?
     
     enum CodingKeys: String, CodingKey {
         case hx_countryId = "countryId"
         case hx_provinceId = "provinceId"
     }
     
-    func hx_execute( closer: @escaping (([OptionOutModel]?)->())) {
+    public func hx_execute( closer: @escaping (([OptionOutModel]?)->())) {
         
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         

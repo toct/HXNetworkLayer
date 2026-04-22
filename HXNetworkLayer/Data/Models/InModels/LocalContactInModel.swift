@@ -15,7 +15,7 @@
 
             for hx_phoneNum in hx_phoneNums {
                 
-                let hx_phone = hx_phoneNum.hx_philippinePhone.trimmingCharacters(in: CharacterSet.whitespaces).hx_philippinePhone
+                let hx_phone = hx_phoneNum.hx_formatPhone.trimmingCharacters(in: CharacterSet.whitespaces).hx_formatPhone
                 if hx_phone.isEmpty { continue }
                 var hx_time = String(format: "%.f", ((hx_alterTime?.timeIntervalSince1970 ?? 0) * 1000))
                 hx_time = hx_time == "0" ? "" : hx_time
