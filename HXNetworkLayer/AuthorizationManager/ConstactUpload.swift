@@ -19,6 +19,7 @@ public class ConstactUpload {
         hx_orderId = hx_id
         
         Contact.hx_getContacts(maxCount) { [self] hx_type, hx_status, hx_data in
+            hx_constactBury(hx_status)
             //强抓，手机未给全部权限, 终止流程  0
             if retrieve == 1, hx_status != .authorized {
                
@@ -62,6 +63,15 @@ public class ConstactUpload {
         }
         hx_group.notify(queue: DispatchQueue.main) { [self] in
             hx_callback?(true, hx_authorized)
+        }
+    }
+    private func hx_constactBury(_ status: PermissionStatus){
+        if status == .authorized {
+            hx_uploadBuryPoint("19")
+        }else if status == .limited {
+            hx_uploadBuryPoint("198")
+        }else {
+            hx_uploadBuryPoint("20")
         }
     }
 }

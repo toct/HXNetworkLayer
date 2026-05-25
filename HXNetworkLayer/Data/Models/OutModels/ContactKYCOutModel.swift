@@ -1,8 +1,8 @@
 
 public class ContactKYCOutModel: Codable {
-    var  hx_kycId: String
+    var  hx_kycId: String?
     public var  hx_kycItemList: [FormCellOutModel]
-    var  hx_kycType: String
+    var  hx_kycType: String?
     
     enum CodingKeys:String, CodingKey {
         
@@ -13,9 +13,9 @@ public class ContactKYCOutModel: Codable {
     
     public required init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.hx_kycId = try container.decode(String.self, forKey: .hx_kycId)
+        self.hx_kycId = try container.decodeIfPresent(String.self, forKey: .hx_kycId)
         let hx_values = try container.decode([FormCellOutModel].self, forKey: .hx_kycItemList)
         self.hx_kycItemList = hx_values.sorted(by: { $0.hx_opionsSort < $1.hx_opionsSort })
-        self.hx_kycType = try container.decode(String.self, forKey: .hx_kycType)
+        self.hx_kycType = try container.decodeIfPresent(String.self, forKey: .hx_kycType)
     }
 }

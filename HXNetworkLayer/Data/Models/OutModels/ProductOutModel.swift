@@ -1,8 +1,10 @@
-public class ProductOutModel: Codable, Equatable {
+public class ProductOutModel: Codable, Hashable {
+    let id: UUID = UUID()
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
     public static func == (lhs: ProductOutModel, rhs: ProductOutModel) -> Bool {
-        return lhs.hx_productLogo == rhs.hx_productLogo &&
-               lhs.hx_productId == rhs.hx_productId &&
-               lhs.hx_productName == rhs.hx_productName
+        return lhs.id == rhs.id
     }
     public var hx_highAmount: String?
     public var hx_highestTerm: String?
@@ -43,20 +45,20 @@ public class ProductOutModel: Codable, Equatable {
         self.hx_productLogo = try container.decodeIfPresent(String.self, forKey: .hx_productLogo)
         self.hx_productName = try container.decodeIfPresent(String.self, forKey: .hx_productName)
         self.hx_defaultLoanTerm = try container.decodeIfPresent(Int.self, forKey: .hx_defaultLoanTerm)
-
+        
         hx_setupProperties()
     }
     
     func hx_setupProperties(){
         if let hx_lowA = hx_lowAmount?.hx_formatNumber() {
             if let hx_heighA = hx_highAmount?.hx_formatNumber() {
-                hx_showAmo = "฿" + hx_lowA + " ~ B" + hx_heighA
+                hx_showAmo = hx_moneyKey + hx_lowA + " ~ \(hx_moneyKey)" + hx_heighA
             }else{
-                hx_showAmo = "฿" + hx_lowA
+                hx_showAmo = hx_moneyKey + hx_lowA
             }
         }else{
             if let hx_heighA = hx_highAmount?.hx_formatNumber()  {
-                hx_showAmo = "฿" + hx_heighA
+                hx_showAmo = hx_moneyKey + hx_heighA
             }
         }
         

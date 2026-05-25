@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public class BingCardInModel: NSObject {
     let hx_bankId: String?
     private var hx_callback: (([FormCellOutModel]?)->())?
@@ -19,7 +18,6 @@ public class BingCardInModel: NSObject {
             let hx_tmpData = data?.sorted { $0.hx_opionsSort < $1.hx_opionsSort }
             closer(hx_tmpData)
         }
-                
         NetworkTool().url(hx_bingCard_url).params([:]).callback({[self] code, success , data in
             if success {
                 let hx_data = JsonKit.hx_jsonToModel(data, modelType: CardViewOutModel.self)

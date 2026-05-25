@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class ProductLabelOutModel: Codable {
     /// 标签编号
     let hx_labelId: String

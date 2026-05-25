@@ -5,7 +5,7 @@ import CryptoKit
 extension String {
     public var hx_formatPhone: String {
         var num = filter(\.isNumber)
-        guard num.hx_isPhilippinePhone() else { return "" }
+        guard num.hx_isValidPhone() else { return "" }
         if num.hasPrefix(hx_contryId) {
             num = String(num.dropFirst(hx_contryId.count))
         }
@@ -15,7 +15,7 @@ extension String {
         return num
     }
     
-    func hx_isPhilippinePhone() -> Bool {
+    public func hx_isValidPhone() -> Bool {
         guard let hx_pattern = SharedModel.shared.hx_constactValue?[hx_contryId] as? String else { return false }
         return self.hx_verify(with:hx_pattern)
     }
@@ -35,15 +35,27 @@ extension String {
         CCHmac(CCHmacAlgorithm(kCCHmacAlgSHA256), key, key.count, self, count, &result)
         return Data(result).lazy.map { String(format: "%02x", $0) }.joined()
     }
-    public func hx_formatNumber() -> String {
+    public func hx_formatNumber(_ count: Int = 0) -> String {
         let hx_formatter = NumberFormatter()
         hx_formatter.numberStyle = .decimal
-        hx_formatter.minimumFractionDigits = 0
-        hx_formatter.maximumFractionDigits = 0
+        hx_formatter.minimumFractionDigits = count
+        hx_formatter.maximumFractionDigits = count
         hx_formatter.locale = Locale(identifier: "en_US")
         guard let number = hx_formatter.number(from: self) else {
             return self
         }
         return hx_formatter.string(from: number) ?? ""
+    }
+    
+    public func hx_formatNumberWithMoneyKey(_ count: Int = 0) -> String {
+        let hx_formatter = NumberFormatter()
+        hx_formatter.numberStyle = .decimal
+        hx_formatter.minimumFractionDigits = count
+        hx_formatter.maximumFractionDigits = count
+        hx_formatter.locale = Locale(identifier: "en_US")
+        guard let number = hx_formatter.number(from: self) else {
+            return hx_moneyKey + self
+        }
+        return hx_moneyKey + (hx_formatter.string(from: number) ?? "")
     }
 }

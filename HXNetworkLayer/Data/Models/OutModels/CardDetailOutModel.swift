@@ -19,4 +19,5 @@ public class CardDetailOutModel: Codable {
         case hx_identityNo = "identityNo"
         case hx_accountPhone = "accountPhone"
     }
+    public init(){}
 }

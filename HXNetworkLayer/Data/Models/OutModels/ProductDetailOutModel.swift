@@ -18,7 +18,7 @@ public class ProductDetailOutModel: Codable, ObservableObject {
 
     @Published public var hx_selectAmountIndex: Int? {
         didSet{
-            hx_selectAmountAndTerm()
+            hx_selectTermIndex = 0
         }
     }
     @Published public var hx_selectTermIndex: Int?{

@@ -61,3 +61,31 @@ public class HtmlParamModel: Codable {
         }
     }
 }
+
+public class JuLiangParamModel: Codable {
+    var hx_baseUrl: String? = SwitchHostAddress.shared.addresss()
+    var hx_token: String? = LocalizationData.shared.hx_loginData.hx_token
+    var hx_userId: String? = LocalizationData.shared.hx_loginData.hx_userId
+    var hx_mobile: String? = LocalizationData.shared.hx_userData?.hx_phone
+    var hx_appId: String? = APPID
+    var hx_salt: String? = SALT
+    
+    public init() {}
+    enum CodingKeys: String, CodingKey {
+        case hx_baseUrl = "baseUrl"
+        case hx_token = "token"
+        case hx_userId = "userId"
+        case hx_appId = "appId"
+        case hx_salt = "salt"
+        case hx_mobile = "mobile"
+    }
+    
+    public func hx_coverToString() -> String? {
+        do{
+            let data = try JSONEncoder().encode(self)
+            return String(data: data, encoding: .utf8)
+        }catch{
+            return nil
+        }
+    }
+}

@@ -74,8 +74,8 @@ public class FormCellOutModel: Codable, Identifiable {
                 hx_value = String(hx_value.prefix(3))
             }
         case "account_no", "confirm_account_no":
-            if hx_value.count > 10 {
-                hx_value = String(hx_value.prefix(10))
+            if hx_value.count > 128 {
+                hx_value = String(hx_value.prefix(128))
             }
         case "Telegram", "LINE", "account_phone":
             var count = 0

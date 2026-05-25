@@ -13,6 +13,7 @@ public class NewKYCInModel: NSObject {
                 if let hx_dict = data as? Dictionary<String, Any> {
                     let hx_data = JsonKit.hx_jsonToModel(hx_dict, modelType: KYCItemUploadOutModel.self)
                     closer(hx_data?.hx_echoMap?.hx_willExecuteStepNumber)
+                    return
                 }
             }
             closer(nil)

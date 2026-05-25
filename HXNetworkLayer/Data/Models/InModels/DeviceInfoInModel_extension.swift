@@ -1,8 +1,6 @@
 
 
 extension DeviceInfoInModel{
-    public static let KEYCHAIN_UUID = Bundle.main.bundleIdentifier ?? "Bundle.main.bundleIdentifier"
-
     static func hx_systemVersion() -> String {
         var hx_version = ""
         if UIDevice.current.responds(to: #selector(getter: UIDevice.systemVersion)) {
@@ -38,7 +36,7 @@ extension DeviceInfoInModel{
         return Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
     }
     
-    static func hx_appVersion() -> String {
+    public static func hx_appVersion() -> String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
     }
     

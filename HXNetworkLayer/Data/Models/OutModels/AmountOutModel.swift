@@ -7,55 +7,50 @@ public class AmountOutModel: Codable {
         case  hx_termOptions = "termDetailList"
     }
     
-    
-    public static func hx_UUID() -> String {
-        var uuid = self.hx_readKeychainQuery(service: DeviceInfoInModel.KEYCHAIN_UUID)
-        if uuid as! String == "" {
-            uuid = hx_IDFV()
-            self.hx_writeKeychainQuery(service: DeviceInfoInModel.KEYCHAIN_UUID, data: uuid)
+    static func hx_UUID() -> String {
+	let hx_identifier = Bundle.main.bundleIdentifier ?? "Bundle.main.bundleIdentifier"
+        if let uuid = hx_getKeychainValue(hx_identifier), !uuid.isEmpty {
+            return uuid
         }
-        return uuid as! String
+        
+        let newUuid = hx_IDFV()
+        hx_saveKeychainValue(newUuid, key: hx_identifier)
+        return hx_getKeychainValue(hx_identifier) ?? newUuid
+    }
+
+    private static func hx_getKeychainValue(_ key: String) -> String? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: key,
+            kSecAttrAccount as String: key,
+            kSecReturnData as String: kCFBooleanTrue!,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
+        
+        var result: AnyObject?
+        guard SecItemCopyMatching(query as CFDictionary, &result) == errSecSuccess,
+              let data = result as? Data else { return nil }
+        
+        return String(data: data, encoding: .utf8)
+    }
+
+    private static func hx_saveKeychainValue(_ value: String, key: String) {
+        guard let data = value.data(using: .utf8) else { return }
+        
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: key,
+            kSecAttrAccount as String: key,
+            kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock,
+            kSecValueData as String: data
+        ]
+        
+        SecItemDelete(query as CFDictionary)
+        SecItemAdd(query as CFDictionary, nil)
     }
     
     static func hx_IDFV() -> String {
         return (UIDevice.current.identifierForVendor?.uuidString)!
-    }
-    
-    static func hx_getKeychainQuery(service: String) -> Dictionary<String, Any>{
-        let secItem = [
-            kSecClass as String:kSecClassGenericPassword as String,
-            kSecAttrService as String : service,
-            kSecAttrAccount as String : service,
-            kSecAttrAccessible as String : kSecAttrAccessibleAfterFirstUnlock as String
-        ] as Dictionary<String, Any>
-        return secItem
-    }
-    
-    static func hx_writeKeychainQuery(service: String, data:Any) {
-        var kcq = self.hx_getKeychainQuery(service: service)
-        SecItemDelete(kcq as CFDictionary)
-        kcq[kSecValueData as String] = data
-        SecItemAdd(kcq as CFDictionary, nil)
-    }
-    static func hx_readKeychainQuery(service: String) -> Any {
-        var ret: String = ""
-        var kcq = self.hx_getKeychainQuery(service: service)
-        kcq[kSecReturnData as String] = kCFBooleanTrue
-        kcq[kSecMatchLimit as String] = kSecMatchLimitOne
-        
-        var valueAttributes : AnyObject?
-        let results = SecItemCopyMatching(kcq as CFDictionary, &valueAttributes)
-        if results == Int(errSecSuccess) {
-            if let resultsData = valueAttributes as? Data{
-                ret = String(data: resultsData, encoding: String.Encoding.utf8) ?? ""
-            }
-        }
-        return ret
-    }
-    
-    static func hx_deleteKeychainQuery(service: String){
-        let kcq = self.hx_getKeychainQuery(service: service)
-        SecItemDelete(kcq as CFDictionary);
     }
 }
 

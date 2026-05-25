@@ -22,7 +22,7 @@ class RootOutModel: Codable {
     func hx_setupProperties() {
         if let code = hx_resultCode {
             switch code {
-            case 200, 1000000, 6201144, 6202001, 6202004, 6230002, 6230003, 6230004:
+            case 200, 1000000, 6201144, 6202001, 6202004, 6212011, 6230002, 6230003, 6230004:
                 break
             case 2000001, 2000002, 2002001:
                 if code == 2000002 {

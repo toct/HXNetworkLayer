@@ -14,7 +14,7 @@ public class CardListInModel: NSObject, Codable {
         case hx_bankCardBindId = "bankCardBindId"
     }
     
-    func hx_execute(closer: @escaping (([CardInfoOutModel]?)->())) {
+    public func hx_execute(closer: @escaping (([CardInfoOutModel]?)->())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
         NetworkTool().url(hx_cardList_url).params(hx_dict).callback({ code, success , data in
             if success {

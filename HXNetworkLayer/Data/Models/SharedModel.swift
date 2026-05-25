@@ -32,8 +32,9 @@ public class SharedModel: NSObject
     private func startMonitoring() {
         hx_monitor.pathUpdateHandler = { path in
             if path.status == .satisfied {
-                Idfa.hx_checkAuth { _, _, _ in}
-                AppConfigInModel().hx_execute {}
+                if LocalizationData.shared.hx_config == nil { // 当没有config，才去调用，防止网络不稳定，频繁调用
+                    AppConfigInModel().hx_execute {}
+                }
             }
             if path.usesInterfaceType(.wifi) {
                 hx_networkType = "1"

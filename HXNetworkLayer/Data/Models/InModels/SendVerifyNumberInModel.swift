@@ -30,7 +30,7 @@ public class SendVerifyNumberInModel: NSObject, Codable {
             return false
         }
         
-        if !phone.hx_isPhilippinePhone() {
+        if !phone.hx_isValidPhone() {
             LoadingIndicator.hx_show(hx_commonDoc("c12"))
             return false
         }

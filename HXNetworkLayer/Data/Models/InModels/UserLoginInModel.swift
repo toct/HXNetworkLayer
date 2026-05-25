@@ -18,6 +18,12 @@ public class UserLoginInModel: NSObject, Codable {
     }
     
     public func hx_execute(closer: @escaping ((Bool) -> ())) {
+        Idfa.hx_checkAuth { _, _, _ in
+            self.hx_request(closer)
+        }
+    }
+    
+    private func hx_request(_ closer: @escaping ((Bool) -> ())) {
         if !hx_checkParametersValid() {
             closer(false)
             return
@@ -42,7 +48,7 @@ public class UserLoginInModel: NSObject, Codable {
             return false
         }
         
-        if !phone.hx_isPhilippinePhone() {
+        if !phone.hx_isValidPhone() {
             LoadingIndicator.hx_show(hx_commonDoc("c12"))
             return false
         }

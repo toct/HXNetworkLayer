@@ -69,10 +69,12 @@ public class ConfigSubOutModel: Codable {
     public var hx_fjtip: String?
     public var hx_contactCount: String?
     public var hx_customerH5: String?
+    public var hx_rejectH5: String?
     enum CodingKeys:String, CodingKey {
         case hx_fjtip = "fjtip"
         case hx_contactCount = "contactCount"
         case hx_customerH5 = "CustomerH5"
+        case hx_rejectH5 = "rejectH5"
     }
     
 //    required init(from decoder: any Decoder) throws {

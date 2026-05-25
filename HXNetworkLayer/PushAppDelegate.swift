@@ -19,6 +19,10 @@ public class PushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificatio
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
 
+//        .error：只记录 Error 和 Assert 级别的日志，会过滤掉 Notice、Warning 等较低级别的信息（包括你要禁用的 FCM 日志）。
+//        你可以在 .error、.warning、.notice、.info、.debug 等级别中按需选择，级别越高，打印的日志越少。
+        FirebaseConfiguration.shared.setLoggerLevel(.error)
+        
         return true
     }
     
@@ -64,7 +68,7 @@ public class PushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificatio
                     
         // 打印调试
         let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        print("APNs Device Token: \(tokenString)")
+        print("Google Token: \(tokenString)")
         hx_uploadGoogleToken()
     }
 
