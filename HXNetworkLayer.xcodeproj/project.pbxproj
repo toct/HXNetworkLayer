@@ -132,6 +132,7 @@
 		4C9E21FC2FC4615900FC9134 /* FYGB.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E21F42FC4615900FC9134 /* FYGB.mobileprovision */; };
 		4C9E21FD2FC4615900FC9134 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E21F52FC4615900FC9134 /* GoogleService-Info.plist */; };
 		4C9E21FE2FC4615900FC9134 /* 推送-证书.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E21F82FC4615900FC9134 /* 推送-证书.p12 */; };
+		4C9E23062FC5445C00FC9134 /* KycDataFourCommitInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E23052FC5445C00FC9134 /* KycDataFourCommitInModel.swift */; };
 		95FFDB9B7044B9BBE397B1B3 /* Pods_HXNetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */; };
 		F6905D776132579E95EC32CD /* Pods_HXNetworkLayer_HXNetworkLayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2728A174833FBB06F775A3F /* Pods_HXNetworkLayer_HXNetworkLayerTests.framework */; };
 /* End PBXBuildFile section */
@@ -273,6 +274,7 @@
 		4C9E21F62FC4615900FC9134 /* identifire.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = identifire.rtf; sourceTree = "<group>"; };
 		4C9E21F72FC4615900FC9134 /* 开发-证书.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "开发-证书.p12"; sourceTree = "<group>"; };
 		4C9E21F82FC4615900FC9134 /* 推送-证书.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "推送-证书.p12"; sourceTree = "<group>"; };
+		4C9E23052FC5445C00FC9134 /* KycDataFourCommitInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KycDataFourCommitInModel.swift; sourceTree = "<group>"; };
 		55D2C54FD6F771101F2FAB6B /* Pods_HXNetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HXNetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F39F53B0C3E03A655B3B56 /* Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig"; path = "Target Support Files/Pods-HXNetworkLayer-HXNetworkLayerTests/Pods-HXNetworkLayer-HXNetworkLayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB20D916A6BB9906D38D758B /* Pods-HXNetworkLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXNetworkLayer.release.xcconfig"; path = "Target Support Files/Pods-HXNetworkLayer/Pods-HXNetworkLayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				4C8CA5AB2F77B236002518A2 /* MentationInModel.swift */,
 				4C74D9082F567E1C00D770C4 /* HtmlParamModel.swift */,
 				4C74D9092F567E1C00D770C4 /* ImageuploadInModel.swift */,
+				4C9E23052FC5445C00FC9134 /* KycDataFourCommitInModel.swift */,
 				4C8CA5B12F77B2A2002518A2 /* ProvinceInModel.swift */,
 				4C74D90A2F567E1C00D770C4 /* KycDataCommitInModel.swift */,
 				4C74D90B2F567E1C00D770C4 /* KycItemCommitInModel.swift */,
@@ -466,19 +469,13 @@
 		4C74D94D2F567E1C00D770C4 /* HXNetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				4C9E22DB2FC53E8D00FC9134 /* Utils */,
 				4C74D9AF2F567E3700D770C4 /* NetWorkUtils */,
 				4C74D8F62F567E1C00D770C4 /* AuthorizationManager */,
 				4C74D94A2F567E1C00D770C4 /* Data */,
 				4C74D94B2F567E1C00D770C4 /* HXNetworkLayer.docc */,
 				4C74D94C2F567E1C00D770C4 /* HXNetworkLayer.swift */,
-				4C74D9C22F56D8E800D770C4 /* Debouncer.swift */,
-				4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */,
 				4C9E21F92FC4615900FC9134 /* 推送证书 */,
-				4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */,
-				4C74D9C02F56882E00D770C4 /* LoadingIndicator.swift */,
-				4C5D9ECB2F98C340001B90F0 /* StringExtension.swift */,
-				4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */,
-				4C74D8F02F567E1C00D770C4 /* HXNetworkLayerConstant.swift */,
 				4C74D9B42F567E6A00D770C4 /* HXNetworkLayer-Bridge-header.h */,
 			);
 			path = HXNetworkLayer;
@@ -514,6 +511,20 @@
 				4C9E21F82FC4615900FC9134 /* 推送-证书.p12 */,
 			);
 			path = "推送证书";
+			sourceTree = "<group>";
+		};
+		4C9E22DB2FC53E8D00FC9134 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4C74D8F02F567E1C00D770C4 /* HXNetworkLayerConstant.swift */,
+				4C74D9C42F56DA2E00D770C4 /* UIImage_Extension.swift */,
+				4C5D9ECB2F98C340001B90F0 /* StringExtension.swift */,
+				4C74D9C02F56882E00D770C4 /* LoadingIndicator.swift */,
+				4C74D9C62F56DBB400D770C4 /* ViewSetting.swift */,
+				4C2BFEED2F890C5000AD077E /* PushAppDelegate.swift */,
+				4C74D9C22F56D8E800D770C4 /* Debouncer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		55DB5E5F9B569D50610216E3 /* Pods */ = {
@@ -815,6 +826,7 @@
 				4C74D9942F567E1C00D770C4 /* OrdersOutModel.swift in Sources */,
 				4C74D9952F567E1C00D770C4 /* PayOutModel.swift in Sources */,
 				4C74D9BB2F56846A00D770C4 /* CardViewOutModel.swift in Sources */,
+				4C9E23062FC5445C00FC9134 /* KycDataFourCommitInModel.swift in Sources */,
 				4C74D9972F567E1C00D770C4 /* ProductDetailOutModel.swift in Sources */,
 				4C8CA5B02F77B255002518A2 /* MentionListOutModel.swift in Sources */,
 				4C8CA5B82F77CC6E002518A2 /* EwalletInModel.swift in Sources */,
