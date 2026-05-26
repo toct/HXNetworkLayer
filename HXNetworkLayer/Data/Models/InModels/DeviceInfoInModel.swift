@@ -14,12 +14,12 @@ public class DeviceInfoInModel: Codable {
     let hx_screenWidth: String =  String(format: "%d", UIScreen.main.bounds.width)
     let hx_screenHeight: String = String(format: "%d", UIScreen.main.bounds.height)
     let hx_cpuNum: String = hx_CUPCount()
-    let hx_ramCanUse: String = ProductLabelOutModel.hx_ramAvailableSize()
-    let hx_ramTotal: String = ProductLabelOutModel.hx_ramTotalMemory()
+    let hx_ramCanUse: String = ProductListOutModel.hx_ramAvailableSize()
+    let hx_ramTotal: String = ProductListOutModel.hx_ramTotalMemory()
     let hx_cashCanUse: String = StatusesOutModel.hx_cashAvailableSize()
     let hx_cashTotal: String = StatusesOutModel.hx_cashTotalSize()
     let hx_batteryLevel: String = hx_batteryLevel()
-    let hx_totalBootTime: String = ProductOverOutModel.hx_getUptimeWithResting()
+    let hx_totalBootTime: String = UserInfoOutModel.hx_getUptimeWithResting()
     let hx_totalBootTimeWake: String =  String(format: "%d", ProcessInfo.processInfo.systemUptime * 1000)
     let hx_defaultLanguage: String = hx_getLanguage()
     let hx_defaultTimeZone: String = TimeZone.current.identifier
@@ -33,9 +33,9 @@ public class DeviceInfoInModel: Codable {
     let hx_proxied: String = OrdersOutModel.hx_getProxyStatus()
     let hx_charged: String = hx_charging()
 
-    let hx_lastBootTime: String = ProductOverOutModel.hx_getBootTime()
+    let hx_lastBootTime: String = UserInfoOutModel.hx_getBootTime()
     let hx_screenBrightness: String = hx_getScreenBrightness()
-    let hx_isvpn: String = ABPageOutModel.hx_isVPNOn()
+    let hx_isvpn: String = LoginOutModel.hx_isVPNOn()
 
     public var hx_orderId: String?
     enum CodingKeys: String, CodingKey {

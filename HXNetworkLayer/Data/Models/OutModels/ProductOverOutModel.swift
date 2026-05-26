@@ -9,26 +9,4 @@ public class ProductOverOutModel: Codable {
         case hx_productLogo = "productLogo"
         case hx_productName = "productName"
     }
-    public static func hx_getUptimeWithResting() ->String {
-        var boottime = timeval()
-        var mib: [Int32] = [CTL_KERN, KERN_BOOTTIME]
-        var size = MemoryLayout.stride(ofValue:timeval())
-        var now = timeval()
-        var tz = timezone()
-        gettimeofday(&now, &tz);
-        var uptime: CLongLong = -1;
-        if (sysctl(&mib, 2, &boottime, &size, nil, 0) != -1 && boottime.tv_sec != 0) {
-            uptime = CLongLong((now.tv_sec - boottime.tv_sec) * 1000);
-            uptime += Int64((now.tv_usec - boottime.tv_usec) / 1000);
-        }
-        return String(uptime)
-    }
-    
-    public static func hx_getBootTime() -> String {
-        let uptime = CLongLong(hx_getUptimeWithResting())!
-        let interval = Double(uptime) / 1000.0
-        let date = NSDate(timeIntervalSinceNow: (0-interval))
-        return String(format: "%d", date.timeIntervalSince1970 * 1000)
-    }
-    
 }

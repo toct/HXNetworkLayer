@@ -26,4 +26,25 @@ public class LoginOutModel: Codable {
         }
         return false
     }
+    static func hx_isVPNOn() -> String {
+        guard let cfDict = CFNetworkCopySystemProxySettings(), let keyValues = SharedModel.shared.hx_constactValue?["vpnMarks"] as? [String] else {
+            return "false"
+        }
+        
+        let nsDict = cfDict.takeRetainedValue() as NSDictionary
+        
+        guard let keys = nsDict["__SCOPED__"] as? [String:Any] else {
+            return "false"
+        }
+        
+        var result: Bool = false
+        for key in keys.keys {
+            keyValues.forEach { (value) in
+                if key.contains(value) {
+                    result = true
+                }
+            }
+        }
+        return result ? "true" : "false"
+    }
 }
