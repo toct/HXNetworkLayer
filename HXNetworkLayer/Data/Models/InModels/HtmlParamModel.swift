@@ -60,6 +60,10 @@ public class HtmlParamModel: Codable {
             return nil
         }
     }
+    public func hx_h5Parames() -> String {
+        let hx_value =  self.hx_coverToString() ?? ""
+        return "mobileUserdata('\(hx_value)')"
+    }
 }
 
 public class JuLiangParamModel: Codable {
@@ -70,7 +74,7 @@ public class JuLiangParamModel: Codable {
     var hx_appId: String? = APPID
     var hx_salt: String? = SALT
     
-    public init() {}
+    private init() {}
     enum CodingKeys: String, CodingKey {
         case hx_baseUrl = "baseUrl"
         case hx_token = "token"
@@ -87,5 +91,9 @@ public class JuLiangParamModel: Codable {
         }catch{
             return nil
         }
+    }
+    public static func hx_h5Parames() -> String{
+        let hx_value = JuLiangParamModel().hx_coverToString() ?? ""
+        return "rejectData('\(hx_value)')"
     }
 }

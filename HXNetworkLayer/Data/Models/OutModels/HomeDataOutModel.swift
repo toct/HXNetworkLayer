@@ -45,7 +45,7 @@ public class HomeDataOutModel: Codable, Identifiable{
             hx_autoTakeOrder = true
         }
         if let status = hx_userStatus {
-            hx_clickable = [10,30,32,41,80,81].contains(status)
+            hx_clickable = [10,30,32,41,51,80,81].contains(status)
         }
         hx_record = hx_loanRecord?.filter { !$0.isEmpty } ?? []
     }
