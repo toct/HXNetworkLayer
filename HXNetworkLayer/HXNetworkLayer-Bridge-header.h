@@ -26,7 +26,7 @@
  9.git push origin 0.1.0
  10.pod lib lint SystemBasicInfo.podspec --allow-warnings
  11.pod trunk register liguibinEmail@163.com “lguib”
- 12.pod trunk push /Users/gb/HXNetworkLayer/HXNetworkLayer.podspec --allow-warnings
+ 12.pod trunk push /Users/mc/HXNetworkLayer/HXNetworkLayer.podspec --allow-warnings
 
 
  git tag -d 0.1.0
