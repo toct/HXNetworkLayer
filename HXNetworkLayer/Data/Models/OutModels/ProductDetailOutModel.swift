@@ -16,16 +16,17 @@ public class ProductDetailOutModel: Codable, ObservableObject {
     public var hx_orderType:String?
     public var hx_oStatus: Int = 0
 
-    @Published public var hx_selectAmountIndex: Int? {
+    @Published public var hx_selectAmountIndex: Int = 0 {
         didSet{
             hx_selectTermIndex = 0
         }
     }
-    @Published public var hx_selectTermIndex: Int?{
+    @Published public var hx_selectTermIndex: Int = 0{
         didSet{
             hx_selectAmountAndTerm()
         }
     }
+    
     @Published public var hx_selectAmount: Int?
     @Published public var hx_selectTerm: Int?
     enum CodingKeys:String, CodingKey {
@@ -98,28 +99,28 @@ public class ProductDetailOutModel: Codable, ObservableObject {
     }
         
     func hx_selectAmountAndTerm() {
-        if let index = hx_selectAmountIndex, let amounts = hx_amountOptions, amounts.count > index {
-            hx_selectAmount = Int(amounts[index].hx_loanAmount ?? "")
-            let terms = amounts[index].hx_termOptions
+        if  let amounts = hx_amountOptions, amounts.count > hx_selectAmountIndex {
+            hx_selectAmount = Int(amounts[hx_selectAmountIndex].hx_loanAmount ?? "")
+            let terms = amounts[hx_selectAmountIndex].hx_termOptions
             
-            if let index = hx_selectTermIndex, let termcount = terms?.count, termcount > index {
-                if let term = terms?[index].hx_loanTerm {
+            if let termcount = terms?.count, termcount > hx_selectTermIndex {
+                if let term = terms?[hx_selectTermIndex].hx_loanTerm {
                     hx_selectTerm = term
                 }
             }
         }
+        
     }
     
     public func hx_RepayPlans() -> [TermDetailOutModel]? {
-        
-        if let amountIndex = hx_selectAmountIndex, let termIndex = hx_selectTermIndex, let amounts = hx_amountOptions, amounts.count > amountIndex ,let termOption = amounts[amountIndex].hx_termOptions, termOption.count > termIndex, let termItems = termOption[termIndex].hx_pTermItems {
+        if let amounts = hx_amountOptions, amounts.count > hx_selectAmountIndex ,let termOption = amounts[hx_selectAmountIndex].hx_termOptions, termOption.count > hx_selectTermIndex, let termItems = termOption[hx_selectTermIndex].hx_pTermItems {
             return termItems
         }
         return nil
     }
     
     public func hx_loanTerms() -> [TermOutModel]? {
-        guard let amountIndex = hx_selectAmountIndex, let amounts = hx_amountOptions, amounts.count > amountIndex ,let termOption = amounts[amountIndex].hx_termOptions else {
+        guard  let amounts = hx_amountOptions, amounts.count > hx_selectAmountIndex ,let termOption = amounts[hx_selectAmountIndex].hx_termOptions else {
             return nil
         }
         return termOption

@@ -39,7 +39,7 @@ public class DocsInModel: Codable {
             }
         }
         if let dict = hx_doc[key] as? [String: String] {
-            return dict["en"] ?? key
+            return dict[hx_languageCode] ?? key
         }
         
         if let hx_text = SharedModel.shared.hx_constactValue?[key] as? String, !hx_text.isEmpty {
@@ -65,12 +65,12 @@ public class DocsInModel: Codable {
 // 全局函数，用于获取文档内容
 public func hx_commonDoc(_ key: String, _ holder: String = "") -> String {
     var hx_text = DocsInModel.shared.text(key)
-    
     hx_text = hx_text.replacingOccurrences(of: "KT_APPNAME", with: DeviceInfoInModel.hx_appName())
     hx_text = hx_text.replacingOccurrences(of: "KT_CONTACTNUMBER", with: LocalizationData.shared.hx_config?.hx_dynamicParame?.hx_contactCount ?? "")
     hx_text = hx_text.replacingOccurrences(of: "KT_WEBSITELINK", with: LocalizationData.shared.hx_config?.hx_officialLk ?? "")
     hx_text = hx_text.replacingOccurrences(of: "KT_XXX", with: holder)
     hx_text = hx_text.replacingOccurrences(of: "KT_CONTACTNO", with: holder)
+    hx_text = hx_text.replacingOccurrences(of: "KT_ITEMNAME", with: holder)
     return hx_text
 }
 func hx_localDoc(_ key: String, _ holder: String = "") -> String {

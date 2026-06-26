@@ -56,7 +56,8 @@ public class HomeDataOutModel: Codable, Identifiable{
         let fakeData = HomeDataOutModel()
         fakeData.hx_userStatus = 10
         fakeData.hx_hasOrder = -999
-        fakeData.hx_headerPrompt = "Please submit your personal information and get your loan amount"
+        fakeData.hx_headerPrompt = "Por favor, envía tu información de certificación KYC para su revisión."
+        fakeData.hx_clickable = true
         return fakeData
     }
     func hx_abTagutoPlaceOrderVaild(_ isCheck: Bool) -> Bool {

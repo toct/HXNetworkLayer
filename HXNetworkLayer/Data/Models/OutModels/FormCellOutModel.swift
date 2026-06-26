@@ -12,6 +12,7 @@ public class FormCellOutModel: Codable, Identifiable {
     public var  hx_optDisplay: String?
     public var  hx_optValue: String?
     public var  hx_optType: String?
+    public var  hx_accoutType: String?
     public var  hx_visible: Bool = true
     enum CodingKeys:String, CodingKey {
         case  hx_opions = "buttonList"
@@ -68,44 +69,40 @@ public class FormCellOutModel: Codable, Identifiable {
                 .joined()
         }
         // 长度限制
+        
+        var hx_length = 0
+        
         switch hx_opionsCode {
         case "child_count":
-            if hx_value.count > 3 {
-                hx_value = String(hx_value.prefix(3))
-            }
+            hx_length = 3
         case "account_no", "confirm_account_no":
-            if hx_value.count > 128 {
-                hx_value = String(hx_value.prefix(128))
+            if hx_contryId == "63" {
+                hx_length = 128
+            } else if hx_contryId == "52" {
+                hx_length = (hx_accoutType ?? "") == "clabe" ? 18 : 16
             }
-        case "Telegram", "LINE", "account_phone":
-            var count = 0
+        case "Telegram", "LINE", "account_phone", "whatsapp":
             if hx_value.hasPrefix(hx_contryId) && hx_opionsCode == "account_phone" {
-                count += hx_contryId.count
+                hx_length += hx_contryId.count
             }
-            count += (hx_value.hasPrefix("0") ? 10 : 9)
-            if hx_value.count > count {
-                hx_value = String(hx_value.prefix(count))
+            if hx_contryId == "63" {
+                hx_length += (hx_value.hasPrefix("0") ? 10 : 9)
+            } else if hx_contryId == "52" {
+                hx_length += 10
             }
-        case "identity_no":
-            if hx_value.count > 13 {
-                hx_value = String(hx_value.prefix(13))
-            }
+        case "identity_no", "rfcid":
+            hx_length = 13
         case "zip_code":
-            if hx_value.count > 16 {
-                hx_value = String(hx_value.prefix(16))
-            }
+            hx_length = 16
         case "facebook", "email":
-            if hx_value.count > 128 {
-                hx_value = String(hx_value.prefix(128))
-            }
+            hx_length = 128
         case "address":
-            if hx_value.count > 256 {
-                hx_value = String(hx_value.prefix(256))
-            }
+            hx_length = 256
         default:
-            break
+            hx_length = hx_value.count
         }
-        
+        hx_value = String(hx_value.prefix(hx_length))
+
         return hx_value
     }
 }

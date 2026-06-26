@@ -8,11 +8,10 @@
 import SwiftUI
 import Combine
 
+public let hx_webApp = false
+public let hx_kycFour = false
+
 public class ViewSetting: ObservableObject {
-    public lazy var hx_statusHeight: CGFloat = {
-        let hx_height = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.flatMap { $0.windows }.first?.safeAreaInsets.top ?? 0
-        return hx_height
-    }()
     @Published public var hx_userAppear: Bool = false
     @Published public var hx_tabbarAppear: Bool = true
     @Published public var hx_tabIndex = 0
@@ -27,7 +26,6 @@ public class ViewSetting: ObservableObject {
     @Published public var hx_runkyc: FormType = .none
     public var hx_normalUpdateShowed = false
     public var hx_kycComplete = false
-    public let hx_webApp = false
     public var hx_emiHome = false
     public static let shared = ViewSetting()
     
@@ -35,8 +33,8 @@ public class ViewSetting: ObservableObject {
         let hx_appearance = UINavigationBarAppearance()
         hx_appearance.configureWithTransparentBackground()
         hx_appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.white,       // 标题颜色
-            .font: UIFont.systemFont(ofSize: 18, weight: .heavy) // 字体
+            .foregroundColor: UIColor(red: 34/255.0, green: 92/255.0, blue: 63/255.0, alpha: 1.0),// 标题颜色
+            .font: UIFont.systemFont(ofSize: 16, weight: .heavy) // 字体
         ]
         hx_appearance.backgroundColor = .clear
         UINavigationBar.appearance().standardAppearance = hx_appearance

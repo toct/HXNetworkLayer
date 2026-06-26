@@ -24,11 +24,19 @@ public enum PermissionStatus {
 
 public typealias CallBackType = ((CheckType, PermissionStatus, Any?) -> ())
 
-let APPID = "liguibin-phi"
-let SALT = "ABrZLnK0qHKCyqRc" // tai test salt
+//let APPID = "liguibin-phi"
+//let SALT = "ABrZLnK0qHKCyqRc"
+//let hostPrefix = "https://test-phl-api."
+//public let hx_contryId = "63"
 
-//let hostPrefix = "https://api."
-let hostPrefix = "https://test-phl-api."
+//let APPID = "liguibin_mex"
+//let SALT = "NE3eqh8u0iZTmVxj"
+
+let APPID = "liupeice4"
+let SALT = "q5rnURR5mSwbLEPS"
+
+let hostPrefix = "https://test-mxn-api."
+public let hx_contryId = "52"
 
 public let hx_secretKey = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALHlrsKZ";
 var hx_networkType = "0"
@@ -44,9 +52,6 @@ import CommonCrypto
 import CryptoKit
 import SwiftUI
 
-
-public let hx_contryId = "63"
-
 public var hx_moneyKey: String {
     switch hx_contryId{
     case "63":
@@ -56,12 +61,30 @@ public var hx_moneyKey: String {
     case "91":
         return "₹"
     case "52":
-        return "$"
+        return "MXN"
     default:
         return ""
     }
 }
 
+public var hx_languageCode: String {
+    switch hx_contryId{
+    case "63", "91":
+        return "en"
+    case "66":
+        return "th"
+    case "52":
+        return "es"
+    default:
+        return ""
+    }
+}
+
+
 public func rgba(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1.0) -> Color {
     Color(.sRGB, red: r/255.0, green: g/255.0, blue: b/255.0, opacity: a)
+}
+
+public var hx_statusHeight: CGFloat {
+    UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.flatMap { $0.windows }.first?.safeAreaInsets.top ?? 0
 }

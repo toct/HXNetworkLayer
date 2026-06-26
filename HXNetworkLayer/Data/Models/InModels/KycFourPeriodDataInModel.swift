@@ -58,7 +58,7 @@ public class KycFourPeriodDataInModel: NSObject, Codable {
         var hx_tmpData = data  // 创建局部可变副本
         
         group.enter()
-        BanksInModel().hx_execute { [self] datas in
+        EwalletInModel().hx_execute { [self] datas in
             if let data = datas, !data.isEmpty {
                 let hx_model = hx_tmpData.filter({ $0.hx_opionsCode == "bank_code" }).first
                 hx_model?.hx_opions?.append(contentsOf: data)

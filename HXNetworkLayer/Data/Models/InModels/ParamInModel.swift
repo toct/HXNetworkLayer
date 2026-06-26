@@ -1,5 +1,5 @@
 class ParamInModel: NSObject, Codable {
-    let hx_clientLanguage = "en"//"en" "th"
+    let hx_clientLanguage = hx_languageCode
     let hx_os = "2"
     let hx_channel = "app_store"
     let hx_clientVersion = DeviceInfoInModel.hx_appVersion()

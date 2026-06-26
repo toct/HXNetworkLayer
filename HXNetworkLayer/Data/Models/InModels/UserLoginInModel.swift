@@ -36,6 +36,7 @@ public class UserLoginInModel: NSObject, Codable {
                 if let hx_dict = hx_data as? Dictionary<String, Any> {
                     let hx_data = JsonKit.hx_jsonToModel(hx_dict, modelType: LoginOutModel.self)
                     LocalizationData.shared.hx_tmpLoginData = hx_data
+                    SharedModel.hx_submitAdid()
                     closer(success)
                 }
             }

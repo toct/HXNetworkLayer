@@ -160,7 +160,9 @@ public class LocalizationData: ObservableObject, Codable {
 //                      }
 //                  }
             }
-            self.hx_appAccess = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.hx_appAccess = true
+            }
         }
     }
 }

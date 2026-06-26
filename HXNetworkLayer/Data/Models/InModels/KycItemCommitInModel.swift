@@ -19,7 +19,7 @@ public class KycItemCommitInModel: NSObject, Codable {
         hx_itemValueType = data.hx_optType
         hx_kycId = hx_id
     }
-    public func hx_execute(closer: @escaping ((Bool, KYCItemUploadOutModel?) -> ())) {
+    public func hx_execute(closer: @escaping ((Bool, Any?) -> ())) {
         guard let hx_dict = JsonKit.hx_modelToJsonObject(obj: self) else { return }
 
         NetworkTool().url(hx_kycItemCommit_url).params(hx_dict, signedKeys: ["kycId","itemCode","itemValueType","itemValue"]).callback { _, success, hx_data in
@@ -29,7 +29,7 @@ public class KycItemCommitInModel: NSObject, Codable {
                     closer(success ,hx_data)
                 }
             }else{
-                closer(success, nil)
+                closer(success, hx_data)
             }
         }.request()
     }
