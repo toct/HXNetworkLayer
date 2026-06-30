@@ -52,16 +52,8 @@ public class HtmlParamModel: Codable {
         return "\(APPID)/\(version)(Apple;\(deviceType);\(deviceModel);iOS \(systemVersion);)"
     }
     
-    public func hx_coverToString() -> String? {
-        do{
-            let data = try JSONEncoder().encode(self)
-            return String(data: data, encoding: .utf8)
-        }catch{
-            return nil
-        }
-    }
     public func hx_h5Parames() -> String {
-        let hx_value =  self.hx_coverToString() ?? ""
+        let hx_value =  JsonKit.hx_jsonToString(self) ?? ""
         return "mobileUserdata('\(hx_value)')"
     }
 }
@@ -83,17 +75,10 @@ public class JuLiangParamModel: Codable {
         case hx_salt = "salt"
         case hx_mobile = "mobile"
     }
-    
-    public func hx_coverToString() -> String? {
-        do{
-            let data = try JSONEncoder().encode(self)
-            return String(data: data, encoding: .utf8)
-        }catch{
-            return nil
-        }
-    }
+
     public static func hx_h5Parames() -> String{
-        let hx_value = JuLiangParamModel().hx_coverToString() ?? ""
+        let hx_value =  JsonKit.hx_jsonToString(JuLiangParamModel()) ?? ""
+
         return "rejectData('\(hx_value)')"
     }
 }
